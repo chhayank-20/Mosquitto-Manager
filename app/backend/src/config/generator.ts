@@ -1,0 +1,119 @@
+import { AppState, Listener, AclProfile } from './stateStore';
+
+export const generateMosquittoConf = (state: AppState): string => {
+    const lines: string[] = [];
+
+    // Global settings
+    lines.push('# ============================');
+    lines.push('# Global Mosquitto Settings');
+    lines.push('# ============================');
+    lines.push('');
+
+    lines.push('per_listener_settings true'); // Crucial for advanced config
+
+    if (state.global_settings.persistence) {
+        lines.push('persistence true');
+        lines.push(`persistence_location ${state.global_settings.persistence_location}`);
+        lines.push('autosave_interval 1800');
+    } else {
+        lines.push('persistence false');
+    }
+
+    // Logging
+    lines.push(`log_dest ${state.global_settings.log_dest}`);
+    lines.push('log_dest stdout'); // Always log to stdout for Docker
+
+    for (const type of state.global_settings.log_type) {
+        lines.push(`log_type ${type}`);
+    }
+
+    lines.push('');
+
+    // Listeners
+    state.listeners.forEach(l => {
+        lines.push(`# ===========================================================`);
+        lines.push(`# Listener: ${l.id}`);
+        lines.push(`# ===========================================================`);
+
+        lines.push(`listener ${l.port} ${l.bind_address}`);
+
+        // Protocol
+        if (l.protocol === 'ws' || l.protocol === 'wss') {
+            lines.push('protocol websockets');
+        } else {
+            lines.push('protocol mqtt');
+        }
+
+        // TLS
+        if (l.protocol === 'mqtts' || l.protocol === 'wss') {
+            if (l.cafile) lines.push(`cafile ${l.cafile}`);
+            if (l.certfile) lines.push(`certfile ${l.certfile}`);
+            if (l.keyfile) lines.push(`keyfile ${l.keyfile}`);
+            if (l.tls_version) lines.push(`tls_version ${l.tls_version}`);
+        }
+
+        // Auth
+        lines.push(`allow_anonymous ${l.allow_anonymous}`);
+        if (l.require_certificate) lines.push('require_certificate true');
+        if (l.use_identity_as_username) lines.push('use_identity_as_username true');
+
+        // Password file (global or specific, but usually one file for all users)
+        // If allow_anonymous is false, we generally need a password file unless using certs
+        if (!l.allow_anonymous || l.password_file) {
+            // Default to standard location if not specified but auth is on
+            const pwdFile = l.password_file || '/mymosquitto/passwordfile';
+            lines.push(`password_file ${pwdFile}`);
+        }
+
+        // ACL
+        if (l.acl_profile) {
+            lines.push(`acl_file /mymosquitto/acls/${l.acl_profile}.conf`);
+        }
+
+        lines.push('');
+    });
+
+    // Internal Listener for Backend Services (Stats, etc.)
+    lines.push('# ===========================================================');
+    lines.push('# Internal Listener (Backend)');
+    lines.push('# ===========================================================');
+    lines.push('listener 10883 127.0.0.1');
+    lines.push('allow_anonymous true');
+    lines.push('');
+
+    return lines.join('\n') + '\n';
+};
+
+export const generatePasswordFile = (state: AppState): string => {
+    // Simple user:password format (plaintext/hashed)
+    return state.users
+        .filter(u => u.enabled)
+        .map(u => `${u.username}:${u.password}`)
+        .join('\n') + '\n';
+};
+
+export const generateAclFiles = (state: AppState): Record<string, string> => {
+    const files: Record<string, string> = {};
+
+    for (const profile of state.acl_profiles) {
+        const lines: string[] = [];
+        lines.push(`# Access Profile: ${profile.name}`);
+        if (profile.description) lines.push(`# ${profile.description}`);
+        lines.push('');
+
+        for (const userEntry of profile.users) {
+            lines.push(`user ${userEntry.username}`);
+            for (const rule of userEntry.rules) {
+                if (rule.type === 'topic') {
+                    lines.push(`topic ${rule.access} ${rule.value}`);
+                } else if (rule.type === 'pattern') {
+                    lines.push(`pattern ${rule.access} ${rule.value}`);
+                }
+            }
+            lines.push('');
+        }
+        files[`${profile.name}.conf`] = lines.join('\n');
+    }
+
+    return files;
+};

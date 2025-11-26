@@ -1,0 +1,1230 @@
+1764138136: mosquitto version 2.0.21 starting
+1764138136: Config loaded from /mymosquitto/mosquitto.conf.
+1764138136: Opening ipv4 listen socket on port 1883.
+1764138136: mosquitto version 2.0.21 running
+1764138188: mosquitto version 2.0.21 starting
+1764138188: Config loaded from /mymosquitto/mosquitto.conf.
+1764138188: Opening ipv4 listen socket on port 1883.
+1764138188: mosquitto version 2.0.21 running
+1764138223: mosquitto version 2.0.21 starting
+1764138223: Config loaded from /mymosquitto/mosquitto.conf.
+1764138223: Opening ipv4 listen socket on port 1883.
+1764138223: mosquitto version 2.0.21 running
+1764138548: mosquitto version 2.0.21 starting
+1764138548: Config loaded from /mymosquitto/mosquitto.conf.
+1764138548: Opening ipv4 listen socket on port 1883.
+1764138548: mosquitto version 2.0.21 running
+1764138668: New connection from 172.23.0.1:57170 on port 1883.
+1764138668: New client connected from 172.23.0.1:57170 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764138672: Client postman-mqtt-client-1764138668559 disconnected.
+1764138674: New connection from 172.23.0.1:48994 on port 1883.
+1764138674: New client connected from 172.23.0.1:48994 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764140349: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764141826: mosquitto version 2.0.21 starting
+1764141826: Config loaded from /mymosquitto/mosquitto.conf.
+1764141826: Opening ipv4 listen socket on port 1883.
+1764141826: mosquitto version 2.0.21 running
+1764141826: New connection from 127.0.0.1:56740 on port 1883.
+1764141826: New client connected from 127.0.0.1:56740 as backend-stats-monitor (p2, c1, k60).
+1764141827: Expiring client postman-mqtt-client-1764138668559 due to timeout.
+1764141971: New connection from 172.23.0.1:58116 on port 1883.
+1764141971: New client connected from 172.23.0.1:58116 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142011: Client postman-mqtt-client-1764138668559 disconnected.
+1764142043: New connection from 172.23.0.1:47436 on port 1883.
+1764142043: New client connected from 172.23.0.1:47436 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142045: Client postman-mqtt-client-1764138668559 disconnected.
+1764142052: Reloading config.
+1764142052: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1764142052: Error found at /mymosquitto/mosquitto.conf:19.
+1764142062: New connection from 172.23.0.1:55604 on port 1883.
+1764142062: New client connected from 172.23.0.1:55604 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142066: Client postman-mqtt-client-1764138668559 disconnected.
+1764142069: New connection from 172.23.0.1:33908 on port 1883.
+1764142069: New client connected from 172.23.0.1:33908 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142071: Client postman-mqtt-client-1764138668559 disconnected.
+1764142086: New connection from 172.23.0.1:34206 on port 1883.
+1764142086: New client connected from 172.23.0.1:34206 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142112: Client postman-mqtt-client-1764138668559 disconnected.
+1764142113: New connection from 172.23.0.1:56374 on port 1883.
+1764142113: New client connected from 172.23.0.1:56374 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142114: Client postman-mqtt-client-1764138668559 disconnected.
+1764142116: Reloading config.
+1764142116: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1764142116: Error found at /mymosquitto/mosquitto.conf:19.
+1764142122: New connection from 172.23.0.1:34974 on port 1883.
+1764142122: New client connected from 172.23.0.1:34974 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142125: Client postman-mqtt-client-1764138668559 disconnected.
+1764142126: New connection from 172.23.0.1:34990 on port 1883.
+1764142126: New client connected from 172.23.0.1:34990 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142127: Client postman-mqtt-client-1764138668559 disconnected.
+1764142188: Reloading config.
+1764142188: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1764142188: Error found at /mymosquitto/mosquitto.conf:19.
+1764142192: New connection from 172.23.0.1:59970 on port 1883.
+1764142192: New client connected from 172.23.0.1:59970 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142197: Client postman-mqtt-client-1764138668559 disconnected.
+1764142207: New connection from 172.23.0.1:47394 on port 1883.
+1764142207: New client connected from 172.23.0.1:47394 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764142208: Client postman-mqtt-client-1764138668559 disconnected.
+1764142264: Reloading config.
+1764142264: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1764142264: Error found at /mymosquitto/mosquitto.conf:19.
+1764142574: Reloading config.
+1764142574: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1764142574: Error found at /mymosquitto/mosquitto.conf:19.
+1764143027: mosquitto version 2.0.21 starting
+1764143027: Config loaded from /mymosquitto/mosquitto.conf.
+1764143027: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143027: Error: Invalid password hash type for user user_1, removing entry.
+1764143027: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143027: Error: Invalid password hash type for user user_1, removing entry.
+1764143027: Opening ipv4 listen socket on port 1883.
+1764143027: Opening ipv6 listen socket on port 1883.
+1764143027: Opening ipv4 listen socket on port 8883.
+1764143027: Opening ipv6 listen socket on port 8883.
+1764143027: mosquitto version 2.0.21 running
+1764143027: New connection from ::1:37156 on port 1883.
+1764143027: Client backend-stats-monitor disconnected, not authorised.
+1764143028: Expiring client postman-mqtt-client-1764138668559 due to timeout.
+1764143028: New connection from ::1:37166 on port 1883.
+1764143028: Client backend-stats-monitor disconnected, not authorised.
+1764143029: New connection from ::1:41748 on port 1883.
+1764143029: Client backend-stats-monitor disconnected, not authorised.
+1764143030: New connection from ::1:41756 on port 1883.
+1764143030: Client backend-stats-monitor disconnected, not authorised.
+1764143031: New connection from ::1:41758 on port 1883.
+1764143031: Client backend-stats-monitor disconnected, not authorised.
+1764143032: New connection from ::1:41768 on port 1883.
+1764143032: Client backend-stats-monitor disconnected, not authorised.
+1764143033: New connection from ::1:41776 on port 1883.
+1764143033: Client backend-stats-monitor disconnected, not authorised.
+1764143034: New connection from ::1:41790 on port 1883.
+1764143034: Client backend-stats-monitor disconnected, not authorised.
+1764143035: New connection from ::1:41802 on port 1883.
+1764143035: Client backend-stats-monitor disconnected, not authorised.
+1764143036: New connection from ::1:41806 on port 1883.
+1764143036: Client backend-stats-monitor disconnected, not authorised.
+1764143037: New connection from ::1:41822 on port 1883.
+1764143037: Client backend-stats-monitor disconnected, not authorised.
+1764143038: New connection from ::1:41830 on port 1883.
+1764143038: Client backend-stats-monitor disconnected, not authorised.
+1764143039: New connection from ::1:42178 on port 1883.
+1764143039: Client backend-stats-monitor disconnected, not authorised.
+1764143040: New connection from ::1:42182 on port 1883.
+1764143040: Client backend-stats-monitor disconnected, not authorised.
+1764143041: New connection from ::1:42190 on port 1883.
+1764143041: Client backend-stats-monitor disconnected, not authorised.
+1764143042: New connection from ::1:42192 on port 1883.
+1764143042: Client backend-stats-monitor disconnected, not authorised.
+1764143043: New connection from ::1:42196 on port 1883.
+1764143043: Client backend-stats-monitor disconnected, not authorised.
+1764143044: New connection from ::1:42210 on port 1883.
+1764143044: Client backend-stats-monitor disconnected, not authorised.
+1764143045: New connection from ::1:42224 on port 1883.
+1764143045: Client backend-stats-monitor disconnected, not authorised.
+1764143046: New connection from ::1:42226 on port 1883.
+1764143046: Client backend-stats-monitor disconnected, not authorised.
+1764143047: New connection from ::1:42242 on port 1883.
+1764143047: Client backend-stats-monitor disconnected, not authorised.
+1764143048: New connection from ::1:42246 on port 1883.
+1764143048: Client backend-stats-monitor disconnected, not authorised.
+1764143049: New connection from ::1:54218 on port 1883.
+1764143049: Client backend-stats-monitor disconnected, not authorised.
+1764143050: New connection from ::1:54224 on port 1883.
+1764143050: Client backend-stats-monitor disconnected, not authorised.
+1764143051: New connection from ::1:54230 on port 1883.
+1764143051: Client backend-stats-monitor disconnected, not authorised.
+1764143052: New connection from ::1:54236 on port 1883.
+1764143052: Client backend-stats-monitor disconnected, not authorised.
+1764143053: New connection from ::1:54242 on port 1883.
+1764143053: Client backend-stats-monitor disconnected, not authorised.
+1764143054: New connection from ::1:54258 on port 1883.
+1764143054: Client backend-stats-monitor disconnected, not authorised.
+1764143055: New connection from ::1:54260 on port 1883.
+1764143055: Client backend-stats-monitor disconnected, not authorised.
+1764143056: New connection from ::1:54274 on port 1883.
+1764143056: Client backend-stats-monitor disconnected, not authorised.
+1764143057: New connection from ::1:54290 on port 1883.
+1764143057: Client backend-stats-monitor disconnected, not authorised.
+1764143058: New connection from ::1:54292 on port 1883.
+1764143058: Client backend-stats-monitor disconnected, not authorised.
+1764143059: New connection from ::1:45058 on port 1883.
+1764143059: Client backend-stats-monitor disconnected, not authorised.
+1764143060: New connection from ::1:45074 on port 1883.
+1764143060: Client backend-stats-monitor disconnected, not authorised.
+1764143061: New connection from ::1:45082 on port 1883.
+1764143061: Client backend-stats-monitor disconnected, not authorised.
+1764143062: New connection from ::1:45096 on port 1883.
+1764143062: Client backend-stats-monitor disconnected, not authorised.
+1764143063: New connection from ::1:45100 on port 1883.
+1764143063: Client backend-stats-monitor disconnected, not authorised.
+1764143064: New connection from ::1:45104 on port 1883.
+1764143064: Client backend-stats-monitor disconnected, not authorised.
+1764143065: New connection from ::1:45120 on port 1883.
+1764143065: Client backend-stats-monitor disconnected, not authorised.
+1764143067: New connection from ::1:45126 on port 1883.
+1764143067: Client backend-stats-monitor disconnected, not authorised.
+1764143068: New connection from ::1:45138 on port 1883.
+1764143068: Client backend-stats-monitor disconnected, not authorised.
+1764143069: New connection from ::1:45146 on port 1883.
+1764143069: Client backend-stats-monitor disconnected, not authorised.
+1764143070: New connection from ::1:33496 on port 1883.
+1764143070: Client backend-stats-monitor disconnected, not authorised.
+1764143071: New connection from ::1:33504 on port 1883.
+1764143071: Client backend-stats-monitor disconnected, not authorised.
+1764143072: New connection from ::1:33514 on port 1883.
+1764143072: Client backend-stats-monitor disconnected, not authorised.
+1764143073: New connection from ::1:33528 on port 1883.
+1764143073: Client backend-stats-monitor disconnected, not authorised.
+1764143074: New connection from ::1:33530 on port 1883.
+1764143074: Client backend-stats-monitor disconnected, not authorised.
+1764143075: New connection from ::1:33534 on port 1883.
+1764143075: Client backend-stats-monitor disconnected, not authorised.
+1764143076: New connection from ::1:33542 on port 1883.
+1764143076: Client backend-stats-monitor disconnected, not authorised.
+1764143077: New connection from ::1:33546 on port 1883.
+1764143077: Client backend-stats-monitor disconnected, not authorised.
+1764143078: New connection from ::1:33556 on port 1883.
+1764143078: Client backend-stats-monitor disconnected, not authorised.
+1764143079: New connection from ::1:42708 on port 1883.
+1764143079: Client backend-stats-monitor disconnected, not authorised.
+1764143080: New connection from ::1:42712 on port 1883.
+1764143080: Client backend-stats-monitor disconnected, not authorised.
+1764143081: New connection from ::1:42724 on port 1883.
+1764143081: Client backend-stats-monitor disconnected, not authorised.
+1764143082: New connection from ::1:42738 on port 1883.
+1764143082: Client backend-stats-monitor disconnected, not authorised.
+1764143083: New connection from ::1:42744 on port 1883.
+1764143083: Client backend-stats-monitor disconnected, not authorised.
+1764143084: New connection from ::1:42748 on port 1883.
+1764143084: Client backend-stats-monitor disconnected, not authorised.
+1764143085: New connection from ::1:42752 on port 1883.
+1764143085: Client backend-stats-monitor disconnected, not authorised.
+1764143086: New connection from ::1:42760 on port 1883.
+1764143086: Client backend-stats-monitor disconnected, not authorised.
+1764143087: New connection from ::1:42762 on port 1883.
+1764143087: Client backend-stats-monitor disconnected, not authorised.
+1764143088: New connection from ::1:42778 on port 1883.
+1764143088: Client backend-stats-monitor disconnected, not authorised.
+1764143088: mosquitto version 2.0.21 starting
+1764143088: Config loaded from /mymosquitto/mosquitto.conf.
+1764143088: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143088: Error: Invalid password hash type for user user_1, removing entry.
+1764143088: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143088: Error: Invalid password hash type for user user_1, removing entry.
+1764143088: Opening ipv4 listen socket on port 1883.
+1764143088: Opening ipv6 listen socket on port 1883.
+1764143088: Opening ipv4 listen socket on port 8883.
+1764143088: Opening ipv6 listen socket on port 8883.
+1764143088: mosquitto version 2.0.21 running
+1764143089: Expiring client postman-mqtt-client-1764138668559 due to timeout.
+1764143089: New connection from ::1:38528 on port 1883.
+1764143089: Client backend-stats-monitor disconnected, not authorised.
+1764143090: New connection from ::1:38542 on port 1883.
+1764143090: Client backend-stats-monitor disconnected, not authorised.
+1764143091: New connection from ::1:38554 on port 1883.
+1764143091: Client backend-stats-monitor disconnected, not authorised.
+1764143092: New connection from ::1:38564 on port 1883.
+1764143092: Client backend-stats-monitor disconnected, not authorised.
+1764143093: New connection from ::1:38576 on port 1883.
+1764143093: Client backend-stats-monitor disconnected, not authorised.
+1764143094: New connection from ::1:38588 on port 1883.
+1764143094: Client backend-stats-monitor disconnected, not authorised.
+1764143095: New connection from ::1:38592 on port 1883.
+1764143095: Client backend-stats-monitor disconnected, not authorised.
+1764143096: New connection from ::1:38604 on port 1883.
+1764143096: Client backend-stats-monitor disconnected, not authorised.
+1764143097: New connection from ::1:38618 on port 1883.
+1764143097: Client backend-stats-monitor disconnected, not authorised.
+1764143098: New connection from ::1:38626 on port 1883.
+1764143098: Client backend-stats-monitor disconnected, not authorised.
+1764143099: New connection from ::1:32918 on port 1883.
+1764143099: Client backend-stats-monitor disconnected, not authorised.
+1764143100: New connection from ::1:32934 on port 1883.
+1764143100: Client backend-stats-monitor disconnected, not authorised.
+1764143101: New connection from ::1:32950 on port 1883.
+1764143101: Client backend-stats-monitor disconnected, not authorised.
+1764143102: New connection from ::1:32964 on port 1883.
+1764143102: Client backend-stats-monitor disconnected, not authorised.
+1764143103: New connection from ::1:32966 on port 1883.
+1764143103: Client backend-stats-monitor disconnected, not authorised.
+1764143104: New connection from ::1:32980 on port 1883.
+1764143104: Client backend-stats-monitor disconnected, not authorised.
+1764143105: New connection from ::1:32996 on port 1883.
+1764143105: Client backend-stats-monitor disconnected, not authorised.
+1764143106: New connection from ::1:33000 on port 1883.
+1764143106: Client backend-stats-monitor disconnected, not authorised.
+1764143107: New connection from ::1:33006 on port 1883.
+1764143107: Client backend-stats-monitor disconnected, not authorised.
+1764143108: New connection from ::1:33018 on port 1883.
+1764143108: Client backend-stats-monitor disconnected, not authorised.
+1764143109: New connection from ::1:53726 on port 1883.
+1764143109: Client backend-stats-monitor disconnected, not authorised.
+1764143110: New connection from ::1:53742 on port 1883.
+1764143110: Client backend-stats-monitor disconnected, not authorised.
+1764143111: New connection from ::1:53744 on port 1883.
+1764143111: Client backend-stats-monitor disconnected, not authorised.
+1764143112: New connection from ::1:53754 on port 1883.
+1764143112: Client backend-stats-monitor disconnected, not authorised.
+1764143113: New connection from ::1:53758 on port 1883.
+1764143113: Client backend-stats-monitor disconnected, not authorised.
+1764143114: New connection from ::1:53772 on port 1883.
+1764143114: Client backend-stats-monitor disconnected, not authorised.
+1764143115: New connection from ::1:53774 on port 1883.
+1764143115: Client backend-stats-monitor disconnected, not authorised.
+1764143116: New connection from ::1:53790 on port 1883.
+1764143116: Client backend-stats-monitor disconnected, not authorised.
+1764143117: New connection from ::1:53800 on port 1883.
+1764143117: Client backend-stats-monitor disconnected, not authorised.
+1764143118: New connection from ::1:53806 on port 1883.
+1764143118: Client backend-stats-monitor disconnected, not authorised.
+1764143119: New connection from ::1:42526 on port 1883.
+1764143119: Client backend-stats-monitor disconnected, not authorised.
+1764143120: New connection from ::1:42536 on port 1883.
+1764143120: Client backend-stats-monitor disconnected, not authorised.
+1764143121: New connection from ::1:42538 on port 1883.
+1764143121: Client backend-stats-monitor disconnected, not authorised.
+1764143122: New connection from ::1:42544 on port 1883.
+1764143122: Client backend-stats-monitor disconnected, not authorised.
+1764143123: New connection from ::1:42558 on port 1883.
+1764143123: Client backend-stats-monitor disconnected, not authorised.
+1764143124: New connection from ::1:42566 on port 1883.
+1764143124: Client backend-stats-monitor disconnected, not authorised.
+1764143125: New connection from ::1:42578 on port 1883.
+1764143125: Client backend-stats-monitor disconnected, not authorised.
+1764143126: New connection from ::1:42586 on port 1883.
+1764143126: Client backend-stats-monitor disconnected, not authorised.
+1764143127: New connection from ::1:42594 on port 1883.
+1764143127: Client backend-stats-monitor disconnected, not authorised.
+1764143128: New connection from ::1:42606 on port 1883.
+1764143128: Client backend-stats-monitor disconnected, not authorised.
+1764143129: New connection from ::1:52702 on port 1883.
+1764143129: Client backend-stats-monitor disconnected, not authorised.
+1764143130: New connection from ::1:52710 on port 1883.
+1764143130: Client backend-stats-monitor disconnected, not authorised.
+1764143131: New connection from ::1:52712 on port 1883.
+1764143131: Client backend-stats-monitor disconnected, not authorised.
+1764143132: New connection from ::1:52720 on port 1883.
+1764143132: Client backend-stats-monitor disconnected, not authorised.
+1764143133: New connection from ::1:52722 on port 1883.
+1764143133: Client backend-stats-monitor disconnected, not authorised.
+1764143134: New connection from ::1:52732 on port 1883.
+1764143134: Client backend-stats-monitor disconnected, not authorised.
+1764143135: New connection from ::1:52736 on port 1883.
+1764143135: Client backend-stats-monitor disconnected, not authorised.
+1764143136: New connection from ::1:52742 on port 1883.
+1764143136: Client backend-stats-monitor disconnected, not authorised.
+1764143137: New connection from ::1:52752 on port 1883.
+1764143137: Client backend-stats-monitor disconnected, not authorised.
+1764143138: New connection from ::1:52766 on port 1883.
+1764143138: Client backend-stats-monitor disconnected, not authorised.
+1764143139: New connection from ::1:55510 on port 1883.
+1764143139: Client backend-stats-monitor disconnected, not authorised.
+1764143140: New connection from ::1:55514 on port 1883.
+1764143140: Client backend-stats-monitor disconnected, not authorised.
+1764143141: New connection from ::1:55524 on port 1883.
+1764143141: Client backend-stats-monitor disconnected, not authorised.
+1764143142: New connection from ::1:55534 on port 1883.
+1764143142: Client backend-stats-monitor disconnected, not authorised.
+1764143143: New connection from ::1:55540 on port 1883.
+1764143143: Client backend-stats-monitor disconnected, not authorised.
+1764143144: New connection from ::1:55552 on port 1883.
+1764143144: Client backend-stats-monitor disconnected, not authorised.
+1764143145: New connection from ::1:55560 on port 1883.
+1764143145: Client backend-stats-monitor disconnected, not authorised.
+1764143146: New connection from ::1:55564 on port 1883.
+1764143146: Client backend-stats-monitor disconnected, not authorised.
+1764143147: New connection from ::1:55580 on port 1883.
+1764143147: Client backend-stats-monitor disconnected, not authorised.
+1764143148: New connection from ::1:55592 on port 1883.
+1764143148: Client backend-stats-monitor disconnected, not authorised.
+1764143149: New connection from ::1:53962 on port 1883.
+1764143149: Client backend-stats-monitor disconnected, not authorised.
+1764143150: New connection from ::1:53974 on port 1883.
+1764143150: Client backend-stats-monitor disconnected, not authorised.
+1764143151: New connection from ::1:53984 on port 1883.
+1764143151: Client backend-stats-monitor disconnected, not authorised.
+1764143152: New connection from ::1:53998 on port 1883.
+1764143152: Client backend-stats-monitor disconnected, not authorised.
+1764143153: New connection from ::1:54012 on port 1883.
+1764143153: Client backend-stats-monitor disconnected, not authorised.
+1764143154: New connection from ::1:54028 on port 1883.
+1764143154: Client backend-stats-monitor disconnected, not authorised.
+1764143155: New connection from ::1:54036 on port 1883.
+1764143155: Client backend-stats-monitor disconnected, not authorised.
+1764143156: New connection from ::1:54050 on port 1883.
+1764143156: Client backend-stats-monitor disconnected, not authorised.
+1764143157: New connection from ::1:54054 on port 1883.
+1764143157: Client backend-stats-monitor disconnected, not authorised.
+1764143158: New connection from ::1:54060 on port 1883.
+1764143158: Client backend-stats-monitor disconnected, not authorised.
+1764143159: New connection from ::1:49642 on port 1883.
+1764143159: Client backend-stats-monitor disconnected, not authorised.
+1764143160: mosquitto version 2.0.21 starting
+1764143160: Config loaded from /mymosquitto/mosquitto.conf.
+1764143160: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143160: Error: Invalid password hash type for user user_1, removing entry.
+1764143160: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1764143160: Error: Invalid password hash type for user user_1, removing entry.
+1764143160: Opening ipv4 listen socket on port 1883.
+1764143160: Opening ipv6 listen socket on port 1883.
+1764143160: Opening ipv4 listen socket on port 8883.
+1764143160: Opening ipv6 listen socket on port 8883.
+1764143160: mosquitto version 2.0.21 running
+1764143161: Expiring client postman-mqtt-client-1764138668559 due to timeout.
+1764143181: mosquitto version 2.0.21 terminating
+1764143181: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764143182: mosquitto version 2.0.21 starting
+1764143182: Config loaded from /mymosquitto/mosquitto.conf.
+1764143182: Opening ipv4 listen socket on port 1883.
+1764143182: Opening ipv6 listen socket on port 1883.
+1764143182: Opening ipv4 listen socket on port 10883.
+1764143182: mosquitto version 2.0.21 running
+1764143182: New connection from 127.0.0.1:60642 on port 10883.
+1764143182: New client connected from 127.0.0.1:60642 as backend-stats-monitor (p2, c1, k60).
+1764143225: mosquitto version 2.0.21 terminating
+1764143225: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764143226: mosquitto version 2.0.21 starting
+1764143226: Config loaded from /mymosquitto/mosquitto.conf.
+1764143226: Opening ipv4 listen socket on port 1883.
+1764143226: Opening ipv6 listen socket on port 1883.
+1764143226: Opening ipv4 listen socket on port 10883.
+1764143226: mosquitto version 2.0.21 running
+1764143227: New connection from 127.0.0.1:47036 on port 10883.
+1764143227: New client connected from 127.0.0.1:47036 as backend-stats-monitor (p2, c1, k60).
+1764143397: New connection from 172.23.0.1:38152 on port 1883.
+1764143397: New client connected from 172.23.0.1:38152 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764143457: Client postman-mqtt-client-1764138668559 disconnected.
+1764143458: New connection from 172.23.0.1:57612 on port 1883.
+1764143458: New client connected from 172.23.0.1:57612 as postman-mqtt-client-1764138668559 (p5, c0, k60).
+1764143459: Client postman-mqtt-client-1764138668559 disconnected.
+1764143463: mosquitto version 2.0.21 terminating
+1764143463: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764143464: mosquitto version 2.0.21 starting
+1764143464: Config loaded from /mymosquitto/mosquitto.conf.
+1764143464: Opening ipv4 listen socket on port 1883.
+1764143464: Opening ipv6 listen socket on port 1883.
+1764143464: Opening ipv4 listen socket on port 10883.
+1764143464: mosquitto version 2.0.21 running
+1764143465: New connection from 127.0.0.1:50840 on port 10883.
+1764143465: New client connected from 127.0.0.1:50840 as backend-stats-monitor (p2, c1, k60).
+1764143467: New connection from 172.23.0.1:59112 on port 1883.
+1764143467: Client postman-mqtt-client-1764138668559 disconnected, not authorised.
+1764143496: New connection from 172.23.0.1:37254 on port 1883.
+1764143496: New client connected from 172.23.0.1:37254 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'testuser').
+1764143586: Client postman-mqtt-client-1764138668559 disconnected.
+1764143590: New connection from 172.23.0.1:37492 on port 1883.
+1764143590: New client connected from 172.23.0.1:37492 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'testuser').
+1764143606: Client postman-mqtt-client-1764138668559 disconnected.
+1764143649: New connection from 172.23.0.1:45240 on port 1883.
+1764143649: New client connected from 172.23.0.1:45240 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'testuser').
+1764143653: Client postman-mqtt-client-1764138668559 disconnected.
+1764144150: mosquitto version 2.0.21 starting
+1764144150: Config loaded from /mymosquitto/mosquitto.conf.
+1764144150: Opening ipv4 listen socket on port 1883.
+1764144150: Opening ipv6 listen socket on port 1883.
+1764144150: Opening ipv4 listen socket on port 10883.
+1764144150: mosquitto version 2.0.21 running
+1764144150: New connection from 127.0.0.1:44042 on port 10883.
+1764144150: New client connected from 127.0.0.1:44042 as backend-stats-monitor (p2, c1, k60).
+1764144302: mosquitto version 2.0.21 starting
+1764144302: Config loaded from /mymosquitto/mosquitto.conf.
+1764144302: Opening ipv4 listen socket on port 1883.
+1764144302: Opening ipv6 listen socket on port 1883.
+1764144302: Opening ipv4 listen socket on port 10883.
+1764144302: mosquitto version 2.0.21 running
+1764144302: New connection from 127.0.0.1:42234 on port 10883.
+1764144302: New client connected from 127.0.0.1:42234 as backend-stats-monitor (p2, c1, k60).
+1764144364: mosquitto version 2.0.21 starting
+1764144364: Config loaded from /mymosquitto/mosquitto.conf.
+1764144364: Opening ipv4 listen socket on port 1883.
+1764144364: Opening ipv6 listen socket on port 1883.
+1764144364: Opening ipv4 listen socket on port 10883.
+1764144364: mosquitto version 2.0.21 running
+1764144405: mosquitto version 2.0.21 starting
+1764144405: Config loaded from /mymosquitto/mosquitto.conf.
+1764144405: Opening ipv4 listen socket on port 1883.
+1764144405: Opening ipv6 listen socket on port 1883.
+1764144405: Opening ipv4 listen socket on port 10883.
+1764144405: mosquitto version 2.0.21 running
+1764144405: New connection from 127.0.0.1:45050 on port 10883.
+1764144405: New client connected from 127.0.0.1:45050 as backend-stats-monitor (p2, c1, k60).
+1764144814: New connection from 172.23.0.1:38998 on port 1883.
+1764144814: Client mqttx_327e2d13 disconnected, not authorised.
+1764144893: New connection from 172.23.0.1:51116 on port 1883.
+1764144893: New client connected from 172.23.0.1:51116 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'testuser').
+1764144895: Client postman-mqtt-client-1764138668559 disconnected.
+1764144914: New connection from 172.23.0.1:48298 on port 1883.
+1764144914: Client mqttx_327e2d13 disconnected, not authorised.
+1764144931: New connection from 172.23.0.1:57854 on port 1883.
+1764144931: New client connected from 172.23.0.1:57854 as mqttx_327e2d13 (p5, c1, k60, u'testuser').
+1764144967: New connection from 172.23.0.1:55172 on port 1883.
+1764144967: New client connected from 172.23.0.1:55172 as mqttx_16432b94 (p5, c1, k60, u'testuser').
+1764144979: Client mqttx_327e2d13 disconnected.
+1764145005: Client mqttx_16432b94 disconnected.
+1764145147: mosquitto version 2.0.21 terminating
+1764145147: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764145148: mosquitto version 2.0.21 starting
+1764145148: Config loaded from /mymosquitto/mosquitto.conf.
+1764145148: Opening ipv4 listen socket on port 1883.
+1764145148: Opening ipv6 listen socket on port 1883.
+1764145148: Opening ipv4 listen socket on port 8883.
+1764145148: Opening ipv6 listen socket on port 8883.
+1764145148: Opening ipv4 listen socket on port 10883.
+1764145148: mosquitto version 2.0.21 running
+1764145149: New connection from 127.0.0.1:41946 on port 10883.
+1764145149: New client connected from 127.0.0.1:41946 as backend-stats-monitor (p2, c1, k60).
+1764145152: New connection from 172.23.0.1:44384 on port 8883.
+1764145152: Client mqttx_16432b94 disconnected, not authorised.
+1764145164: New connection from 172.23.0.1:38266 on port 8883.
+1764145164: Client mqttx_16432b94 disconnected, not authorised.
+1764145237: mosquitto version 2.0.21 terminating
+1764145237: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764145238: mosquitto version 2.0.21 starting
+1764145238: Config loaded from /mymosquitto/mosquitto.conf.
+1764145238: Opening ipv4 listen socket on port 1883.
+1764145238: Opening ipv6 listen socket on port 1883.
+1764145238: Opening ipv4 listen socket on port 8883.
+1764145238: Opening ipv6 listen socket on port 8883.
+1764145238: Opening ipv4 listen socket on port 10883.
+1764145238: mosquitto version 2.0.21 running
+1764145239: New connection from 127.0.0.1:33850 on port 10883.
+1764145239: New client connected from 127.0.0.1:33850 as backend-stats-monitor (p2, c1, k60).
+1764145241: New connection from 172.23.0.1:42544 on port 8883.
+1764145241: Client mqttx_16432b94 disconnected, not authorised.
+1764145247: mosquitto version 2.0.21 terminating
+1764145247: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764145248: mosquitto version 2.0.21 starting
+1764145248: Config loaded from /mymosquitto/mosquitto.conf.
+1764145248: Opening ipv4 listen socket on port 1883.
+1764145248: Opening ipv6 listen socket on port 1883.
+1764145248: Opening ipv4 listen socket on port 8883.
+1764145248: Opening ipv6 listen socket on port 8883.
+1764145248: Opening ipv4 listen socket on port 10883.
+1764145248: mosquitto version 2.0.21 running
+1764145249: New connection from 127.0.0.1:56238 on port 10883.
+1764145249: New client connected from 127.0.0.1:56238 as backend-stats-monitor (p2, c1, k60).
+1764145253: New connection from 172.23.0.1:56562 on port 8883.
+1764145253: New client connected from 172.23.0.1:56562 as mqttx_16432b94 (p5, c1, k60, u'testuser').
+1764145256: Client mqttx_16432b94 disconnected.
+1764145265: mosquitto version 2.0.21 terminating
+1764145265: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764145266: mosquitto version 2.0.21 starting
+1764145266: Config loaded from /mymosquitto/mosquitto.conf.
+1764145266: Opening ipv4 listen socket on port 1883.
+1764145266: Opening ipv6 listen socket on port 1883.
+1764145266: Opening ipv4 listen socket on port 8883.
+1764145266: Opening ipv6 listen socket on port 8883.
+1764145266: Opening ipv4 listen socket on port 10883.
+1764145266: mosquitto version 2.0.21 running
+1764145267: New connection from 127.0.0.1:35714 on port 10883.
+1764145267: New client connected from 127.0.0.1:35714 as backend-stats-monitor (p2, c1, k60).
+1764145270: New connection from 172.23.0.1:38634 on port 8883.
+1764145270: Client mqttx_16432b94 disconnected, not authorised.
+1764145424: New connection from 172.23.0.1:38624 on port 8883.
+1764145424: Client mqttx_16432b94 disconnected, not authorised.
+1764145503: mosquitto version 2.0.21 terminating
+1764145503: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764145504: mosquitto version 2.0.21 starting
+1764145504: Config loaded from /mymosquitto/mosquitto.conf.
+1764145504: Opening ipv4 listen socket on port 1883.
+1764145504: Opening ipv6 listen socket on port 1883.
+1764145504: Opening ipv4 listen socket on port 8883.
+1764145504: Opening ipv6 listen socket on port 8883.
+1764145504: Opening ipv4 listen socket on port 10883.
+1764145504: mosquitto version 2.0.21 running
+1764145505: New connection from 127.0.0.1:56382 on port 10883.
+1764145505: New client connected from 127.0.0.1:56382 as backend-stats-monitor (p2, c1, k60).
+1764145816: mosquitto version 2.0.21 starting
+1764145816: Config loaded from /mymosquitto/mosquitto.conf.
+1764145816: Opening ipv4 listen socket on port 1883.
+1764145816: Opening ipv6 listen socket on port 1883.
+1764145816: Opening ipv4 listen socket on port 8883.
+1764145816: Opening ipv6 listen socket on port 8883.
+1764145816: Opening ipv4 listen socket on port 10883.
+1764145816: mosquitto version 2.0.21 running
+1764145816: New connection from 127.0.0.1:52020 on port 10883.
+1764145816: New client connected from 127.0.0.1:52020 as backend-stats-monitor (p2, c1, k60).
+1764145891: mosquitto version 2.0.21 starting
+1764145891: Config loaded from /mymosquitto/mosquitto.conf.
+1764145891: Opening ipv4 listen socket on port 1883.
+1764145891: Opening ipv6 listen socket on port 1883.
+1764145891: Opening ipv4 listen socket on port 8883.
+1764145891: Opening ipv6 listen socket on port 8883.
+1764145891: Opening ipv4 listen socket on port 10883.
+1764145891: mosquitto version 2.0.21 running
+1764145892: New connection from 127.0.0.1:49148 on port 10883.
+1764145892: New client connected from 127.0.0.1:49148 as backend-stats-monitor (p2, c1, k60).
+1764145945: mosquitto version 2.0.21 starting
+1764145945: Config loaded from /mymosquitto/mosquitto.conf.
+1764145945: Opening ipv4 listen socket on port 1883.
+1764145945: Opening ipv6 listen socket on port 1883.
+1764145945: Opening ipv4 listen socket on port 8883.
+1764145945: Opening ipv6 listen socket on port 8883.
+1764145945: Opening ipv4 listen socket on port 10883.
+1764145945: mosquitto version 2.0.21 running
+1764145945: New connection from 127.0.0.1:34846 on port 10883.
+1764145945: New client connected from 127.0.0.1:34846 as backend-stats-monitor (p2, c1, k60).
+1764147296: mosquitto version 2.0.21 starting
+1764147296: Config loaded from /mymosquitto/mosquitto.conf.
+1764147296: Opening ipv4 listen socket on port 1883.
+1764147296: Opening ipv6 listen socket on port 1883.
+1764147296: Opening ipv4 listen socket on port 8883.
+1764147296: Opening ipv6 listen socket on port 8883.
+1764147296: Opening ipv4 listen socket on port 10883.
+1764147296: mosquitto version 2.0.21 running
+1764147296: New connection from 127.0.0.1:47452 on port 10883.
+1764147296: New client connected from 127.0.0.1:47452 as backend-stats-monitor (p2, c1, k60).
+1764147427: mosquitto version 2.0.21 starting
+1764147427: Config loaded from /mymosquitto/mosquitto.conf.
+1764147427: Opening ipv4 listen socket on port 1883.
+1764147427: Opening ipv6 listen socket on port 1883.
+1764147427: Opening ipv4 listen socket on port 8883.
+1764147427: Opening ipv6 listen socket on port 8883.
+1764147427: Opening ipv4 listen socket on port 10883.
+1764147427: mosquitto version 2.0.21 running
+1764147428: New connection from 127.0.0.1:39758 on port 10883.
+1764147428: New client connected from 127.0.0.1:39758 as backend-stats-monitor (p2, c1, k60).
+1764147456: mosquitto version 2.0.21 terminating
+1764147456: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764147457: mosquitto version 2.0.21 starting
+1764147457: Config loaded from /mymosquitto/mosquitto.conf.
+1764147457: Opening ipv4 listen socket on port 1883.
+1764147457: Opening ipv4 listen socket on port 10883.
+1764147457: mosquitto version 2.0.21 running
+1764147458: New connection from 127.0.0.1:37854 on port 10883.
+1764147458: New client connected from 127.0.0.1:37854 as backend-stats-monitor (p2, c1, k60).
+1764148622: New connection from 172.23.0.1:49380 on port 1883.
+1764148622: New client connected from 172.23.0.1:49380 as mqttx_327e2d13 (p5, c1, k60, u'testuser').
+1764148624: Client mqttx_327e2d13 disconnected.
+1764148720: mosquitto version 2.0.21 terminating
+1764148720: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764148721: mosquitto version 2.0.21 starting
+1764148721: Config loaded from /mymosquitto/mosquitto.conf.
+1764148721: Opening ipv4 listen socket on port 1883.
+1764148721: Opening ipv4 listen socket on port 8884.
+1764148721: Opening ipv4 listen socket on port 10883.
+1764148721: mosquitto version 2.0.21 running
+1764148722: New connection from 127.0.0.1:59112 on port 10883.
+1764148722: New client connected from 127.0.0.1:59112 as backend-stats-monitor (p2, c1, k60).
+1764148795: mosquitto version 2.0.21 terminating
+1764148795: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764148796: mosquitto version 2.0.21 starting
+1764148796: Config loaded from /mymosquitto/mosquitto.conf.
+1764148796: Opening ipv4 listen socket on port 1883.
+1764148796: Opening ipv4 listen socket on port 8883.
+1764148796: Opening ipv4 listen socket on port 10883.
+1764148796: mosquitto version 2.0.21 running
+1764148797: New connection from 127.0.0.1:54654 on port 10883.
+1764148797: New client connected from 127.0.0.1:54654 as backend-stats-monitor (p2, c1, k60).
+1764148806: New connection from 172.23.0.1:55050 on port 8883.
+1764148806: Client mqttx_16432b94 disconnected, not authorised.
+1764148964: mosquitto version 2.0.21 terminating
+1764148964: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764148965: mosquitto version 2.0.21 starting
+1764148965: Config loaded from /mymosquitto/mosquitto.conf.
+1764148965: Opening ipv4 listen socket on port 1883.
+1764148965: Opening ipv4 listen socket on port 8883.
+1764148965: Opening ipv4 listen socket on port 10883.
+1764148965: mosquitto version 2.0.21 running
+1764148966: New connection from 127.0.0.1:47112 on port 10883.
+1764148966: New client connected from 127.0.0.1:47112 as backend-stats-monitor (p2, c1, k60).
+1764148970: New connection from 172.23.0.1:57612 on port 8883.
+1764148970: Client mqttx_16432b94 disconnected, not authorised.
+1764148983: mosquitto version 2.0.21 starting
+1764148983: Config loaded from /mymosquitto/mosquitto.conf.
+1764148983: Opening ipv4 listen socket on port 1883.
+1764148983: Opening ipv4 listen socket on port 8883.
+1764148983: Opening ipv4 listen socket on port 10883.
+1764148983: mosquitto version 2.0.21 running
+1764148984: New connection from 127.0.0.1:37544 on port 10883.
+1764148984: New client connected from 127.0.0.1:37544 as backend-stats-monitor (p2, c1, k60).
+1764148998: New connection from 172.23.0.1:44454 on port 8883.
+1764148998: Client mqttx_16432b94 disconnected, not authorised.
+1764148999: New connection from 172.23.0.1:52238 on port 8883.
+1764148999: Client mqttx_16432b94 disconnected, not authorised.
+1764149138: mosquitto version 2.0.21 starting
+1764149138: Config loaded from /mymosquitto/mosquitto.conf.
+1764149138: Opening ipv4 listen socket on port 1883.
+1764149138: Opening ipv4 listen socket on port 8883.
+1764149138: Opening ipv4 listen socket on port 10883.
+1764149138: mosquitto version 2.0.21 running
+1764149138: New connection from 127.0.0.1:33422 on port 10883.
+1764149138: New client connected from 127.0.0.1:33422 as backend-stats-monitor (p2, c1, k60).
+1764149375: New connection from 172.23.0.1:47252 on port 1883.
+1764149375: New client connected from 172.23.0.1:47252 as mqttx_327e2d13 (p5, c1, k60, u'testuser').
+1764149377: Client mqttx_327e2d13 disconnected.
+1764149392: mosquitto version 2.0.21 terminating
+1764149392: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764149393: mosquitto version 2.0.21 starting
+1764149393: Config loaded from /mymosquitto/mosquitto.conf.
+1764149393: Opening ipv4 listen socket on port 1883.
+1764149393: Opening ipv4 listen socket on port 8883.
+1764149393: Opening ipv4 listen socket on port 10883.
+1764149393: mosquitto version 2.0.21 running
+1764149394: New connection from 127.0.0.1:59854 on port 10883.
+1764149394: New client connected from 127.0.0.1:59854 as backend-stats-monitor (p2, c1, k60).
+1764149397: New connection from 172.23.0.1:37670 on port 1883.
+1764149397: Client mqttx_327e2d13 disconnected, not authorised.
+1764149418: mosquitto version 2.0.21 terminating
+1764149418: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764149419: mosquitto version 2.0.21 starting
+1764149419: Config loaded from /mymosquitto/mosquitto.conf.
+1764149419: Opening ipv4 listen socket on port 1883.
+1764149419: Opening ipv4 listen socket on port 8883.
+1764149419: Opening ipv4 listen socket on port 10883.
+1764149419: mosquitto version 2.0.21 running
+1764149420: New connection from 127.0.0.1:52930 on port 10883.
+1764149420: New client connected from 127.0.0.1:52930 as backend-stats-monitor (p2, c1, k60).
+1764149421: New connection from 172.23.0.1:37094 on port 1883.
+1764149421: New client connected from 172.23.0.1:37094 as mqttx_327e2d13 (p5, c1, k60, u'testuser').
+1764149423: Client mqttx_327e2d13 disconnected.
+1764149426: New connection from 172.23.0.1:33470 on port 8883.
+1764149426: New client connected from 172.23.0.1:33470 as mqttx_16432b94 (p5, c1, k60, u'testuser').
+1764149432: Client mqttx_16432b94 disconnected.
+1764149458: New connection from 172.23.0.1:36210 on port 8883.
+1764149459: Client mqttx_16432b94 disconnected, not authorised.
+1764149535: New connection from 172.23.0.1:35208 on port 8883.
+1764149535: Client mqttx_8b89d7c3 disconnected, not authorised.
+1764149549: New connection from 172.23.0.1:39100 on port 8883.
+1764149549: New client connected from 172.23.0.1:39100 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149552: Client mqttx_8b89d7c3 disconnected.
+1764149561: mosquitto version 2.0.21 terminating
+1764149561: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764149562: mosquitto version 2.0.21 starting
+1764149562: Config loaded from /mymosquitto/mosquitto.conf.
+1764149562: Opening ipv4 listen socket on port 1883.
+1764149562: Opening ipv4 listen socket on port 8883.
+1764149562: Opening ipv4 listen socket on port 10883.
+1764149562: mosquitto version 2.0.21 running
+1764149563: New connection from 127.0.0.1:45950 on port 10883.
+1764149563: New client connected from 127.0.0.1:45950 as backend-stats-monitor (p2, c1, k60).
+1764149564: New connection from 172.23.0.1:47958 on port 8883.
+1764149564: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149564: Client <unknown> disconnected: Protocol error.
+1764149566: New connection from 172.23.0.1:47970 on port 8883.
+1764149566: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149566: Client <unknown> disconnected: Protocol error.
+1764149566: New connection from 172.23.0.1:47986 on port 8883.
+1764149566: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149566: Client <unknown> disconnected: Protocol error.
+1764149566: New connection from 172.23.0.1:48002 on port 8883.
+1764149566: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149566: Client <unknown> disconnected: Protocol error.
+1764149567: New connection from 172.23.0.1:48010 on port 8883.
+1764149567: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149567: Client <unknown> disconnected: Protocol error.
+1764149567: New connection from 172.23.0.1:48024 on port 8883.
+1764149567: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149567: Client <unknown> disconnected: Protocol error.
+1764149568: New connection from 172.23.0.1:48032 on port 8883.
+1764149568: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149568: Client <unknown> disconnected: Protocol error.
+1764149570: New connection from 172.23.0.1:36464 on port 8883.
+1764149570: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149570: Client <unknown> disconnected: Protocol error.
+1764149570: New connection from 172.23.0.1:36470 on port 8883.
+1764149570: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149570: Client <unknown> disconnected: Protocol error.
+1764149570: New connection from 172.23.0.1:36478 on port 8883.
+1764149570: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149570: Client <unknown> disconnected: Protocol error.
+1764149571: New connection from 172.23.0.1:36492 on port 8883.
+1764149571: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149571: Client <unknown> disconnected: Protocol error.
+1764149571: New connection from 172.23.0.1:36498 on port 8883.
+1764149571: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149571: Client <unknown> disconnected: Protocol error.
+1764149572: New connection from 172.23.0.1:36502 on port 8883.
+1764149572: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149572: Client <unknown> disconnected: Protocol error.
+1764149574: New connection from 172.23.0.1:36510 on port 8883.
+1764149574: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149574: Client <unknown> disconnected: Protocol error.
+1764149574: New connection from 172.23.0.1:36522 on port 8883.
+1764149574: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149574: Client <unknown> disconnected: Protocol error.
+1764149574: New connection from 172.23.0.1:36534 on port 8883.
+1764149574: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149574: Client <unknown> disconnected: Protocol error.
+1764149575: New connection from 172.23.0.1:36536 on port 8883.
+1764149575: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149575: Client <unknown> disconnected: Protocol error.
+1764149577: New connection from 172.23.0.1:36540 on port 8883.
+1764149577: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149577: Client <unknown> disconnected: Protocol error.
+1764149579: New connection from 172.23.0.1:39472 on port 8883.
+1764149579: New connection from 172.23.0.1:39476 on port 8883.
+1764149579: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149579: Client <unknown> disconnected: Protocol error.
+1764149579: New connection from 172.23.0.1:39486 on port 8883.
+1764149579: New connection from 172.23.0.1:39494 on port 8883.
+1764149579: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149579: Client <unknown> disconnected: Protocol error.
+1764149579: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149579: Client <unknown> disconnected: Protocol error.
+1764149579: OpenSSL Error[0]: error:0A0000C7:SSL routines::peer did not return a certificate
+1764149579: Client <unknown> disconnected: Protocol error.
+1764149580: mosquitto version 2.0.21 terminating
+1764149580: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764149581: mosquitto version 2.0.21 starting
+1764149581: Config loaded from /mymosquitto/mosquitto.conf.
+1764149581: Opening ipv4 listen socket on port 1883.
+1764149581: Opening ipv4 listen socket on port 8883.
+1764149581: Opening ipv4 listen socket on port 10883.
+1764149581: mosquitto version 2.0.21 running
+1764149582: New connection from 172.23.0.1:39502 on port 8883.
+1764149582: New client connected from 172.23.0.1:39502 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149582: New connection from 127.0.0.1:37624 on port 10883.
+1764149582: New client connected from 127.0.0.1:37624 as backend-stats-monitor (p2, c1, k60).
+1764149583: New connection from 172.23.0.1:39506 on port 8883.
+1764149583: New connection from 172.23.0.1:39522 on port 8883.
+1764149583: New connection from 172.23.0.1:39508 on port 8883.
+1764149583: New connection from 172.23.0.1:39536 on port 8883.
+1764149583: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149583: New client connected from 172.23.0.1:39506 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149583: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149583: New client connected from 172.23.0.1:39508 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149583: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149583: New client connected from 172.23.0.1:39522 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149583: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149583: New client connected from 172.23.0.1:39536 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149587: New connection from 172.23.0.1:39540 on port 8883.
+1764149587: New connection from 172.23.0.1:39548 on port 8883.
+1764149587: New connection from 172.23.0.1:39562 on port 8883.
+1764149587: New connection from 172.23.0.1:39566 on port 8883.
+1764149587: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149587: New client connected from 172.23.0.1:39540 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149587: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149587: New client connected from 172.23.0.1:39548 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149587: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149587: New client connected from 172.23.0.1:39562 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149587: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149587: New client connected from 172.23.0.1:39566 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149591: New connection from 172.23.0.1:44266 on port 8883.
+1764149591: New connection from 172.23.0.1:44268 on port 8883.
+1764149591: New connection from 172.23.0.1:44284 on port 8883.
+1764149591: New connection from 172.23.0.1:44294 on port 8883.
+1764149591: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149591: New client connected from 172.23.0.1:44266 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149591: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149591: New client connected from 172.23.0.1:44268 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149591: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149591: New client connected from 172.23.0.1:44284 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149591: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149591: New client connected from 172.23.0.1:44294 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149594: New connection from 172.23.0.1:44296 on port 8883.
+1764149594: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149594: New client connected from 172.23.0.1:44296 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149595: New connection from 172.23.0.1:44300 on port 8883.
+1764149595: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149595: New client connected from 172.23.0.1:44300 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149595: New connection from 172.23.0.1:44310 on port 8883.
+1764149595: New connection from 172.23.0.1:44322 on port 8883.
+1764149595: New connection from 172.23.0.1:44320 on port 8883.
+1764149595: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149595: New client connected from 172.23.0.1:44310 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149595: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149595: New client connected from 172.23.0.1:44322 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149595: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149595: New client connected from 172.23.0.1:44320 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149598: New connection from 172.23.0.1:44336 on port 8883.
+1764149598: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149598: New client connected from 172.23.0.1:44336 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149599: New connection from 172.23.0.1:44752 on port 8883.
+1764149599: New connection from 172.23.0.1:44762 on port 8883.
+1764149599: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149599: New client connected from 172.23.0.1:44752 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149599: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149599: New client connected from 172.23.0.1:44762 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149599: New connection from 172.23.0.1:44778 on port 8883.
+1764149599: New connection from 172.23.0.1:44766 on port 8883.
+1764149599: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149599: New client connected from 172.23.0.1:44766 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149599: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149599: New client connected from 172.23.0.1:44778 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149602: New connection from 172.23.0.1:44788 on port 8883.
+1764149602: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149602: New client connected from 172.23.0.1:44788 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149603: New connection from 172.23.0.1:44794 on port 8883.
+1764149603: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149603: New client connected from 172.23.0.1:44794 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149603: New connection from 172.23.0.1:44808 on port 8883.
+1764149603: New connection from 172.23.0.1:44818 on port 8883.
+1764149603: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149603: New client connected from 172.23.0.1:44808 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149603: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149603: New client connected from 172.23.0.1:44818 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149607: New connection from 172.23.0.1:44826 on port 8883.
+1764149607: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149607: New client connected from 172.23.0.1:44826 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149608: New connection from 172.23.0.1:44840 on port 8883.
+1764149608: New connection from 172.23.0.1:44842 on port 8883.
+1764149608: New connection from 172.23.0.1:44852 on port 8883.
+1764149608: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149608: New client connected from 172.23.0.1:44842 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149608: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149608: New client connected from 172.23.0.1:44840 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149608: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149608: New client connected from 172.23.0.1:44852 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149612: New connection from 172.23.0.1:36432 on port 8883.
+1764149612: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149612: New client connected from 172.23.0.1:36432 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149613: New connection from 172.23.0.1:36434 on port 8883.
+1764149613: New connection from 172.23.0.1:36442 on port 8883.
+1764149613: New connection from 172.23.0.1:36444 on port 8883.
+1764149613: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149613: New client connected from 172.23.0.1:36442 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149613: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149613: New client connected from 172.23.0.1:36434 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149613: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149613: New client connected from 172.23.0.1:36444 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149616: New connection from 172.23.0.1:36456 on port 8883.
+1764149616: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149616: New client connected from 172.23.0.1:36456 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149617: New connection from 172.23.0.1:36468 on port 8883.
+1764149617: New connection from 172.23.0.1:36476 on port 8883.
+1764149617: New connection from 172.23.0.1:36484 on port 8883.
+1764149617: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149617: New client connected from 172.23.0.1:36468 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149617: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149617: New client connected from 172.23.0.1:36476 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149617: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149617: New client connected from 172.23.0.1:36484 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149620: New connection from 172.23.0.1:48932 on port 8883.
+1764149620: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149620: New client connected from 172.23.0.1:48932 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149621: New connection from 172.23.0.1:48938 on port 8883.
+1764149621: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149621: New client connected from 172.23.0.1:48938 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149621: New connection from 172.23.0.1:48952 on port 8883.
+1764149621: New connection from 172.23.0.1:48966 on port 8883.
+1764149621: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149621: New client connected from 172.23.0.1:48952 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149621: Client mqttx_8b89d7c3 already connected, closing old connection.
+1764149621: New client connected from 172.23.0.1:48966 as mqttx_8b89d7c3 (p5, c1, k60, u'testuser').
+1764149623: OpenSSL Error[0]: error:0A000126:SSL routines::unexpected eof while reading
+1764149623: Client mqttx_8b89d7c3 closed its connection.
+1764161902: mosquitto version 2.0.21 starting
+1764161902: Config loaded from /mymosquitto/mosquitto.conf.
+1764161902: Opening ipv4 listen socket on port 1883.
+1764161902: Opening ipv4 listen socket on port 8883.
+1764161902: Opening ipv4 listen socket on port 10883.
+1764161902: mosquitto version 2.0.21 running
+1764161903: New connection from 127.0.0.1:37972 on port 10883.
+1764161903: New client connected from 127.0.0.1:37972 as backend-stats-monitor (p2, c1, k60).
+1764162387: New connection from 172.23.0.1:52210 on port 1883.
+1764162387: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162408: New connection from 172.23.0.1:54614 on port 1883.
+1764162408: New client connected from 172.23.0.1:54614 as mqtt-explorer-414668f6 (p2, c1, k60, u'testuser').
+1764162425: Client mqtt-explorer-414668f6 disconnected.
+1764162437: New connection from 172.23.0.1:42358 on port 8883.
+1764162437: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162437: Client <unknown> disconnected: Protocol error.
+1764162438: New connection from 172.23.0.1:42364 on port 8883.
+1764162438: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162438: Client <unknown> disconnected: Protocol error.
+1764162439: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162440: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162441: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162443: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162444: New connection from 172.23.0.1:53716 on port 8883.
+1764162444: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162444: Client <unknown> disconnected: Protocol error.
+1764162445: New connection from 172.23.0.1:53730 on port 8883.
+1764162445: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162445: Client <unknown> disconnected: Protocol error.
+1764162446: New connection from 172.23.0.1:53740 on port 8883.
+1764162446: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162446: Client <unknown> disconnected: Protocol error.
+1764162447: New connection from 172.23.0.1:53756 on port 8883.
+1764162447: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162447: Client <unknown> disconnected: Protocol error.
+1764162448: New connection from 172.23.0.1:53760 on port 8883.
+1764162448: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162448: Client <unknown> disconnected: Protocol error.
+1764162449: New connection from 172.23.0.1:60088 on port 8883.
+1764162449: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162449: Client <unknown> disconnected: Protocol error.
+1764162450: New connection from 172.23.0.1:60100 on port 8883.
+1764162450: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162450: Client <unknown> disconnected: Protocol error.
+1764162451: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162452: New connection from 172.23.0.1:60106 on port 8883.
+1764162452: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162452: Client <unknown> disconnected: Protocol error.
+1764162453: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162454: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162455: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162456: New connection from 172.23.0.1:60146 on port 8883.
+1764162456: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162456: Client <unknown> disconnected: Protocol error.
+1764162457: New connection from 172.23.0.1:60148 on port 8883.
+1764162457: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162457: Client <unknown> disconnected: Protocol error.
+1764162458: New connection from 172.23.0.1:60162 on port 8883.
+1764162458: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162458: Client <unknown> disconnected: Protocol error.
+1764162459: New connection from 172.23.0.1:51580 on port 8883.
+1764162459: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162459: Client <unknown> disconnected: Protocol error.
+1764162460: New connection from 172.23.0.1:51592 on port 8883.
+1764162460: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162460: Client <unknown> disconnected: Protocol error.
+1764162461: New connection from 172.23.0.1:51600 on port 8883.
+1764162461: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162461: Client <unknown> disconnected: Protocol error.
+1764162462: New connection from 172.23.0.1:51604 on port 8883.
+1764162462: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162462: Client <unknown> disconnected: Protocol error.
+1764162463: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162464: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162465: New connection from 172.23.0.1:51642 on port 8883.
+1764162465: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162465: Client <unknown> disconnected: Protocol error.
+1764162466: New connection from 172.23.0.1:51658 on port 8883.
+1764162466: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162466: Client <unknown> disconnected: Protocol error.
+1764162468: New connection from 172.23.0.1:51674 on port 8883.
+1764162468: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162468: Client <unknown> disconnected: Protocol error.
+1764162469: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162470: New connection from 172.23.0.1:41724 on port 8883.
+1764162470: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162470: Client <unknown> disconnected: Protocol error.
+1764162471: New connection from 172.23.0.1:41738 on port 8883.
+1764162471: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162471: Client <unknown> disconnected: Protocol error.
+1764162472: New connection from 172.23.0.1:41742 on port 8883.
+1764162472: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162472: Client <unknown> disconnected: Protocol error.
+1764162473: New connection from 172.23.0.1:41750 on port 8883.
+1764162473: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162473: Client <unknown> disconnected: Protocol error.
+1764162474: New connection from 172.23.0.1:41752 on port 8883.
+1764162474: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162474: Client <unknown> disconnected: Protocol error.
+1764162475: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162476: New connection from 172.23.0.1:41764 on port 8883.
+1764162476: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162476: Client <unknown> disconnected: Protocol error.
+1764162477: New connection from 172.23.0.1:41774 on port 8883.
+1764162477: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162477: Client <unknown> disconnected: Protocol error.
+1764162478: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162479: New connection from 172.23.0.1:42118 on port 8883.
+1764162479: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162479: Client <unknown> disconnected: Protocol error.
+1764162480: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162481: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162482: New connection from 172.23.0.1:42144 on port 8883.
+1764162482: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162482: Client <unknown> disconnected: Protocol error.
+1764162484: New connection from 172.23.0.1:42150 on port 8883.
+1764162484: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162484: Client <unknown> disconnected: Protocol error.
+1764162485: New connection from 172.23.0.1:42154 on port 8883.
+1764162485: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162485: Client <unknown> disconnected: Protocol error.
+1764162486: New connection from 172.23.0.1:42164 on port 8883.
+1764162486: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162486: Client <unknown> disconnected: Protocol error.
+1764162487: New connection from 172.23.0.1:42178 on port 8883.
+1764162487: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162487: Client <unknown> disconnected: Protocol error.
+1764162488: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162489: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162491: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162492: New connection from 172.23.0.1:56174 on port 8883.
+1764162492: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162492: Client <unknown> disconnected: Protocol error.
+1764162493: New connection from 172.23.0.1:56176 on port 8883.
+1764162493: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162493: Client <unknown> disconnected: Protocol error.
+1764162494: New connection from 172.23.0.1:56182 on port 8883.
+1764162494: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162494: Client <unknown> disconnected: Protocol error.
+1764162495: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764162496: New connection from 172.23.0.1:56190 on port 8883.
+1764162496: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764162496: Client <unknown> disconnected: Protocol error.
+1764162635: mosquitto version 2.0.21 terminating
+1764162635: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764162636: mosquitto version 2.0.21 starting
+1764162636: Config loaded from /mymosquitto/mosquitto.conf.
+1764162636: Opening ipv4 listen socket on port 1883.
+1764162636: Opening ipv4 listen socket on port 8883.
+1764162636: Opening ipv4 listen socket on port 10883.
+1764162636: mosquitto version 2.0.21 running
+1764162637: New connection from 127.0.0.1:36438 on port 10883.
+1764162637: New client connected from 127.0.0.1:36438 as backend-stats-monitor (p2, c1, k60).
+1764162643: mosquitto version 2.0.21 terminating
+1764162643: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764162644: mosquitto version 2.0.21 starting
+1764162644: Config loaded from /mymosquitto/mosquitto.conf.
+1764162644: Opening ipv4 listen socket on port 1883.
+1764162644: Opening ipv4 listen socket on port 8883.
+1764162644: Opening ipv4 listen socket on port 10883.
+1764162644: mosquitto version 2.0.21 running
+1764162645: New connection from 127.0.0.1:41168 on port 10883.
+1764162645: New client connected from 127.0.0.1:41168 as backend-stats-monitor (p2, c1, k60).
+1764162651: New connection from 172.23.0.1:37654 on port 8883.
+1764162651: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162654: New connection from 172.23.0.1:37660 on port 8883.
+1764162654: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162676: New connection from 172.23.0.1:34780 on port 8883.
+1764162676: New client connected from 172.23.0.1:34780 as mqtt-explorer-414668f6 (p2, c1, k60, u'testuser').
+1764162764: mosquitto version 2.0.21 terminating
+1764162764: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764162765: mosquitto version 2.0.21 starting
+1764162765: Config loaded from /mymosquitto/mosquitto.conf.
+1764162765: Opening ipv4 listen socket on port 1883.
+1764162765: Opening ipv4 listen socket on port 8883.
+1764162765: Opening ipv4 listen socket on port 10883.
+1764162765: mosquitto version 2.0.21 running
+1764162765: New connection from 172.23.0.1:39922 on port 8883.
+1764162765: New client connected from 172.23.0.1:39922 as mqtt-explorer-414668f6 (p2, c1, k60, u'testuser').
+1764162766: New connection from 127.0.0.1:59146 on port 10883.
+1764162766: New client connected from 127.0.0.1:59146 as backend-stats-monitor (p2, c1, k60).
+1764162770: Client mqtt-explorer-414668f6 disconnected.
+1764162774: New connection from 172.23.0.1:34380 on port 8883.
+1764162775: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162777: New connection from 172.23.0.1:34386 on port 8883.
+1764162777: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162778: New connection from 172.23.0.1:34398 on port 8883.
+1764162778: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162778: New connection from 172.23.0.1:34408 on port 8883.
+1764162778: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162779: New connection from 172.23.0.1:54216 on port 8883.
+1764162779: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162794: New connection from 172.23.0.1:53574 on port 8883.
+1764162794: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764162962: mosquitto version 2.0.21 terminating
+1764162962: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764162963: mosquitto version 2.0.21 starting
+1764162963: Config loaded from /mymosquitto/mosquitto.conf.
+1764162963: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764162963: Opening ipv4 listen socket on port 1883.
+1764162963: Opening ipv4 listen socket on port 8883.
+1764162963: Opening ipv4 listen socket on port 10883.
+1764162963: mosquitto version 2.0.21 running
+1764162964: New connection from 127.0.0.1:47366 on port 10883.
+1764162964: New client connected from 127.0.0.1:47366 as backend-stats-monitor (p2, c1, k60).
+1764162969: New connection from 172.23.0.1:56148 on port 8883.
+1764162969: New client connected from 172.23.0.1:56148 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
+1764162972: Client mqtt-explorer-414668f6 disconnected.
+1764162976: New connection from 172.23.0.1:56158 on port 8883.
+1764162976: New client connected from 172.23.0.1:56158 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
+1764162984: Client mqtt-explorer-414668f6 disconnected.
+1764162992: mosquitto version 2.0.21 terminating
+1764162992: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764162993: mosquitto version 2.0.21 starting
+1764162993: Config loaded from /mymosquitto/mosquitto.conf.
+1764162993: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764162993: Opening ipv4 listen socket on port 1883.
+1764162993: Opening ipv4 listen socket on port 8883.
+1764162993: Opening ipv4 listen socket on port 10883.
+1764162993: mosquitto version 2.0.21 running
+1764162994: New connection from 127.0.0.1:44288 on port 10883.
+1764162994: New client connected from 127.0.0.1:44288 as backend-stats-monitor (p2, c1, k60).
+1764162996: New connection from 172.23.0.1:44218 on port 8883.
+1764162996: Client mqtt-explorer-414668f6 disconnected, not authorised.
+1764163020: New connection from 172.23.0.1:42260 on port 1883.
+1764163020: Client <unknown> disconnected due to protocol error.
+1764163036: New connection from 172.23.0.1:44210 on port 1883.
+1764163036: New client connected from 172.23.0.1:44210 as mqtt-explorer-414668f6 (p2, c1, k60).
+1764163327: mosquitto version 2.0.21 terminating
+1764163327: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764163328: mosquitto version 2.0.21 starting
+1764163328: Config loaded from /mymosquitto/mosquitto.conf.
+1764163328: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764163328: Opening ipv4 listen socket on port 1883.
+1764163328: Opening ipv4 listen socket on port 8883.
+1764163328: Opening ipv4 listen socket on port 8884.
+1764163328: Opening ipv4 listen socket on port 10883.
+1764163328: mosquitto version 2.0.21 running
+1764163329: New connection from 127.0.0.1:34340 on port 10883.
+1764163329: New client connected from 127.0.0.1:34340 as backend-stats-monitor (p2, c1, k60).
+1764163329: New connection from 172.23.0.1:60134 on port 1883.
+1764163329: New client connected from 172.23.0.1:60134 as mqtt-explorer-414668f6 (p2, c1, k60).
+1764163407: mosquitto version 2.0.21 terminating
+1764163407: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764163409: mosquitto version 2.0.21 starting
+1764163409: Config loaded from /mymosquitto/mosquitto.conf.
+1764163409: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764163409: Opening ipv4 listen socket on port 1883.
+1764163409: Opening ipv4 listen socket on port 8883.
+1764163409: Opening ipv4 listen socket on port 8884.
+1764163409: Opening ipv4 listen socket on port 10883.
+1764163409: mosquitto version 2.0.21 running
+1764163409: New connection from 172.23.0.1:44708 on port 1883.
+1764163409: New client connected from 172.23.0.1:44708 as mqtt-explorer-414668f6 (p2, c1, k60).
+1764163410: New connection from 127.0.0.1:41142 on port 10883.
+1764163410: New client connected from 127.0.0.1:41142 as backend-stats-monitor (p2, c1, k60).
+1764163418: Client mqtt-explorer-414668f6 disconnected.
+1764163420: New connection from 172.23.0.1:56882 on port 1883.
+1764163420: New client connected from 172.23.0.1:56882 as mqtt-explorer-414668f6 (p2, c1, k60).
+1764163421: Client mqtt-explorer-414668f6 disconnected.
+1764163463: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163464: New connection from 172.23.0.1:50420 on port 8883.
+1764163465: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163465: Client <unknown> disconnected: Protocol error.
+1764163466: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163467: New connection from 172.23.0.1:50440 on port 8883.
+1764163467: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163467: Client <unknown> disconnected: Protocol error.
+1764163468: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163469: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163472: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163484: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163485: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163486: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163487: New connection from 172.23.0.1:39374 on port 8883.
+1764163487: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163487: Client <unknown> disconnected: Protocol error.
+1764163488: New connection from 172.23.0.1:39380 on port 8883.
+1764163488: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163488: Client <unknown> disconnected: Protocol error.
+1764163489: New connection from 172.23.0.1:49450 on port 8883.
+1764163489: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163489: Client <unknown> disconnected: Protocol error.
+1764163490: Client connection from 172.23.0.1 failed: error:0A00010B:SSL routines::wrong version number.
+1764163491: New connection from 172.23.0.1:49462 on port 8883.
+1764163491: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163491: Client <unknown> disconnected: Protocol error.
+1764163493: New connection from 172.23.0.1:49478 on port 8883.
+1764163493: OpenSSL Error[0]: error:0A00010B:SSL routines::wrong version number
+1764163493: Client <unknown> disconnected: Protocol error.
+1764163497: New connection from 172.23.0.1:49488 on port 8883.
+1764163497: New client connected from 172.23.0.1:49488 as mqtt-explorer-414668f6 (p2, c1, k60, u'testuser').
+1764163506: Client mqtt-explorer-414668f6 disconnected.
+1764163585: mosquitto version 2.0.21 starting
+1764163585: Config loaded from /mymosquitto/mosquitto.conf.
+1764163585: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764163585: Opening ipv4 listen socket on port 1883.
+1764163585: Opening ipv4 listen socket on port 8883.
+1764163585: Opening ipv4 listen socket on port 8884.
+1764163585: Opening ipv4 listen socket on port 10883.
+1764163585: mosquitto version 2.0.21 running
+1764163586: New connection from 127.0.0.1:38718 on port 10883.
+1764163586: New client connected from 127.0.0.1:38718 as backend-stats-monitor (p2, c1, k60).
+1764163598: New connection from 172.23.0.1:33030 on port 8884.
+1764163598: OpenSSL Error[0]: error:0A000126:SSL routines::unexpected eof while reading
+1764163598: Client <unknown> disconnected: Protocol error.
+1764163625: New connection from 172.23.0.1:53016 on port 8884.
+1764163625: New client connected from 172.23.0.1:53016 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
+1764163695: Client mqtt-explorer-414668f6 disconnected.
+1764163708: New connection from 172.23.0.1:51718 on port 8884.
+1764163709: New client connected from 172.23.0.1:51718 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
+1764165386: Saving in-memory database to /mymosquitto/data//mosquitto.db.

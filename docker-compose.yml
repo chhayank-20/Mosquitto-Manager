@@ -1,0 +1,13 @@
+services:
+  mosquitto:
+    build: .
+    image: my-eclipse-mosquitto:2
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+      - "3000:3000"
+      - "8884:8884"
+    volumes:
+      - ./mymosquitto:/mymosquitto

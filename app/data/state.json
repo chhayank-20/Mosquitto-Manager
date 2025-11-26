@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "allowAnonymous": false,
+    "persistence": true
+  },
+  "listeners": [
+    {
+      "id": "mqtt-1883",
+      "port": 1883,
+      "protocol": "mqtt",
+      "tls": false
+    },
+    {
+      "id": "mqtt-8883",
+      "port": 8883,
+      "protocol": "mqtt",
+      "tls": false
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "password",
+      "enabled": true
+    }
+  ],
+  "acls": [
+    {
+      "username": "admin",
+      "access": "readwrite",
+      "topic": "#"
+    }
+  ]
+}
