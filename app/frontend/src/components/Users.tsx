@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import type { AppState, User } from '../types';
-import { Users as UsersIcon, Plus, Trash2, Key } from 'lucide-react';
+import { Plus, Trash2, Users as UsersIcon, Eye, EyeOff } from 'lucide-react';
+import { InfoTooltip } from './InfoTooltip';
 
 interface Props {
     state: AppState;
@@ -7,11 +9,13 @@ interface Props {
 }
 
 export default function Users({ state, setState }: Props) {
+    const [visiblePasswords, setVisiblePasswords] = useState<Record<number, boolean>>({});
+
     const addUser = () => {
         const newUser: User = {
-            username: `user_${state.users.length + 1}`,
+            username: `user${state.users.length + 1}`,
             password: 'password',
-            enabled: true,
+            enabled: true
         };
         setState({
             ...state,
@@ -20,9 +24,11 @@ export default function Users({ state, setState }: Props) {
     };
 
     const removeUser = (index: number) => {
-        const newUsers = [...state.users];
-        newUsers.splice(index, 1);
-        setState({ ...state, users: newUsers });
+        if (confirm('Are you sure you want to delete this user?')) {
+            const newUsers = [...state.users];
+            newUsers.splice(index, 1);
+            setState({ ...state, users: newUsers });
+        }
     };
 
     const updateUser = (index: number, field: keyof User, value: any) => {
@@ -31,8 +37,12 @@ export default function Users({ state, setState }: Props) {
         setState({ ...state, users: newUsers });
     };
 
+    const togglePassword = (index: number) => {
+        setVisiblePasswords(prev => ({ ...prev, [index]: !prev[index] }));
+    };
+
     return (
-        <div className="space-y-8">
+        <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2">
                     <UsersIcon className="h-5 w-5" /> Users
@@ -45,67 +55,84 @@ export default function Users({ state, setState }: Props) {
                 </button>
             </div>
 
-            <div className="rounded-xl border bg-card text-card-foreground shadow">
-                <div className="p-0">
-                    <div className="relative w-full overflow-auto">
-                        <table className="w-full caption-bottom text-sm">
-                            <thead className="[&_tr]:border-b">
-                                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground w-[100px]">Enabled</th>
-                                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Username</th>
-                                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Password</th>
-                                    <th className="h-12 px-4 text-right align-middle font-medium text-muted-foreground">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody className="[&_tr:last-child]:border-0">
-                                {state.users.length === 0 && (
-                                    <tr>
-                                        <td colSpan={4} className="p-4 text-center text-muted-foreground">No users defined</td>
-                                    </tr>
-                                )}
-                                {state.users.map((user, idx) => (
-                                    <tr key={idx} className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                                        <td className="p-4 align-middle">
-                                            <input
-                                                type="checkbox"
-                                                checked={user.enabled}
-                                                onChange={(e) => updateUser(idx, 'enabled', e.target.checked)}
-                                                className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                                            />
-                                        </td>
-                                        <td className="p-4 align-middle">
-                                            <input
-                                                type="text"
-                                                value={user.username}
-                                                onChange={(e) => updateUser(idx, 'username', e.target.value)}
-                                                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                                            />
-                                        </td>
-                                        <td className="p-4 align-middle">
-                                            <div className="relative">
-                                                <Key className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                                                <input
-                                                    type="text"
-                                                    value={user.password}
-                                                    onChange={(e) => updateUser(idx, 'password', e.target.value)}
-                                                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-8 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                                                />
-                                            </div>
-                                        </td>
-                                        <td className="p-4 align-middle text-right">
-                                            <button
-                                                onClick={() => removeUser(idx)}
-                                                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9 text-destructive"
-                                            >
-                                                <Trash2 className="h-4 w-4" />
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div className="rounded-md border">
+                <table className="w-full text-sm text-left">
+                    <thead className="bg-muted/50 text-muted-foreground">
+                        <tr>
+                            <th className="h-12 px-4 align-middle font-medium">
+                                <div className="flex items-center gap-2">
+                                    Enabled
+                                    <InfoTooltip content="Enable or disable this user account" />
+                                </div>
+                            </th>
+                            <th className="h-12 px-4 align-middle font-medium">
+                                <div className="flex items-center gap-2">
+                                    Username
+                                    <InfoTooltip content="Unique username for MQTT authentication" />
+                                </div>
+                            </th>
+                            <th className="h-12 px-4 align-middle font-medium">
+                                <div className="flex items-center gap-2">
+                                    Password
+                                    <InfoTooltip content="Password for this user" />
+                                </div>
+                            </th>
+                            <th className="h-12 px-4 align-middle font-medium text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {state.users.length === 0 && (
+                            <tr>
+                                <td colSpan={4} className="p-4 text-center text-muted-foreground">No users defined</td>
+                            </tr>
+                        )}
+                        {state.users.map((user, idx) => (
+                            <tr key={idx} className="border-t hover:bg-muted/50 transition-colors">
+                                <td className="p-4 align-middle">
+                                    <input
+                                        type="checkbox"
+                                        checked={user.enabled}
+                                        onChange={(e) => updateUser(idx, 'enabled', e.target.checked)}
+                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                    />
+                                </td>
+                                <td className="p-4 align-middle">
+                                    <input
+                                        type="text"
+                                        value={user.username}
+                                        onChange={(e) => updateUser(idx, 'username', e.target.value)}
+                                        className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 max-w-[200px]"
+                                    />
+                                </td>
+                                <td className="p-4 align-middle">
+                                    <div className="flex items-center gap-2 max-w-[300px]">
+                                        <input
+                                            type={visiblePasswords[idx] ? "text" : "password"}
+                                            value={user.password}
+                                            onChange={(e) => updateUser(idx, 'password', e.target.value)}
+                                            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                                        />
+                                        <button
+                                            onClick={() => togglePassword(idx)}
+                                            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                                            title={visiblePasswords[idx] ? "Hide Password" : "Show Password"}
+                                        >
+                                            {visiblePasswords[idx] ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td className="p-4 align-middle text-right">
+                                    <button
+                                        onClick={() => removeUser(idx)}
+                                        className="text-destructive hover:text-destructive/80 transition-colors"
+                                    >
+                                        <Trash2 className="h-4 w-4" />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

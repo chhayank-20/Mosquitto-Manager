@@ -1,5 +1,5 @@
 import type { BrokerStats, ConnectedClient, Listener } from '../types';
-import { Activity, Users, Clock, Server, Wifi, Network } from 'lucide-react';
+import { Activity, Users, Clock, Server, Network } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface Props {
@@ -74,21 +74,20 @@ export default function Dashboard({ stats, clients, listeners }: Props) {
                         )}
                     </div>
                 ))}
-                {listeners.map((l, i) => (
-                    <div key={`listener-${i}`} className="rounded-xl border bg-card text-card-foreground shadow p-6">
-                        <div className="flex items-center gap-3">
-                            <div className="p-2 bg-primary/10 rounded-lg">
-                                {(l.protocol === 'ws' || l.protocol === 'wss') ? <Wifi className="h-5 w-5 text-primary" /> : <Network className="h-5 w-5 text-primary" />}
-                            </div>
-                            <div>
-                                <div className="font-medium">
-                                    {l.protocol.toUpperCase()} Port
-                                </div>
-                                <div className="text-2xl font-bold">{l.port}</div>
-                            </div>
-                        </div>
+                <div className="rounded-xl border bg-card text-card-foreground shadow p-6">
+                    <div className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <h3 className="tracking-tight text-sm font-medium text-muted-foreground">Active Ports</h3>
+                        <Network className="h-4 w-4 text-primary" />
                     </div>
-                ))}
+                    <div className="space-y-2 mt-2">
+                        {listeners.map((l, i) => (
+                            <div key={i} className="flex items-center justify-between text-sm">
+                                <span className="font-medium">{l.protocol.toUpperCase()}</span>
+                                <span className="bg-muted px-2 py-0.5 rounded text-xs font-mono">{l.port}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             <div className="rounded-xl border bg-card text-card-foreground shadow">

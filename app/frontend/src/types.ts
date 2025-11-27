@@ -5,9 +5,6 @@ export interface Listener {
     protocol: 'mqtt' | 'mqtts' | 'ws' | 'wss';
 
     // TLS
-    cafile?: string;
-    certfile?: string;
-    keyfile?: string;
     tls_version?: string;
 
     // Auth
@@ -16,6 +13,9 @@ export interface Listener {
     use_identity_as_username: boolean;
     password_file?: string;
     acl_profile?: string;
+    enabled?: boolean; // Default true if undefined
+    mount_point?: string;
+    auth_option?: string; // UI helper: 'none' | 'password_file' | 'acl_file'
 }
 
 export interface User {
@@ -25,7 +25,7 @@ export interface User {
 }
 
 export interface AclRule {
-    type: 'topic' | 'pattern';
+    type: 'topic';
     access: 'read' | 'write' | 'readwrite';
     value: string;
 }
@@ -44,6 +44,11 @@ export interface GlobalSettings {
     persistence_location: string;
     log_dest: string;
     log_type: string[];
+    certificates?: {
+        cafile: string;
+        certfile: string;
+        keyfile: string;
+    };
 }
 
 export interface AppState {

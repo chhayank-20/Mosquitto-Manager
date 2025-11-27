@@ -11,10 +11,9 @@ export interface Listener {
     protocol: 'mqtt' | 'mqtts' | 'ws' | 'wss';
 
     // TLS
-    cafile?: string;
-    certfile?: string;
-    keyfile?: string;
     tls_version?: string;
+    mount_point?: string;
+    auth_option?: string;
 
     // Auth
     allow_anonymous: boolean;
@@ -22,6 +21,7 @@ export interface Listener {
     use_identity_as_username: boolean;
     password_file?: string; // Usually fixed to /etc/mosquitto/passwd but configurable
     acl_profile?: string; // Name of the ACL profile to use
+    enabled?: boolean;
 }
 
 export interface User {
@@ -31,7 +31,7 @@ export interface User {
 }
 
 export interface AclRule {
-    type: 'topic' | 'pattern';
+    type: 'topic';
     access: 'read' | 'write' | 'readwrite';
     value: string;
 }
@@ -50,6 +50,11 @@ export interface GlobalSettings {
     persistence_location: string;
     log_dest: string;
     log_type: string[]; // error, warning, notice, etc.
+    certificates?: {
+        cafile: string;
+        certfile: string;
+        keyfile: string;
+    };
 }
 
 export interface AppState {

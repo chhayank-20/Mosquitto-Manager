@@ -1,5 +1,6 @@
 import type { AppState, AclProfile, AclRule } from '../types';
 import { Shield, Plus, Trash2, FileText } from 'lucide-react';
+import { InfoTooltip } from './InfoTooltip';
 
 
 interface Props {
@@ -21,9 +22,11 @@ export default function Acls({ state, setState }: Props) {
     };
 
     const removeProfile = (index: number) => {
-        const newProfiles = [...state.acl_profiles];
-        newProfiles.splice(index, 1);
-        setState({ ...state, acl_profiles: newProfiles });
+        if (confirm('Are you sure you want to delete this Access profile?')) {
+            const newProfiles = [...state.acl_profiles];
+            newProfiles.splice(index, 1);
+            setState({ ...state, acl_profiles: newProfiles });
+        }
     };
 
     const updateProfile = (index: number, field: keyof AclProfile, value: any) => {
@@ -42,9 +45,11 @@ export default function Acls({ state, setState }: Props) {
     };
 
     const removeUserFromProfile = (profileIndex: number, userIndex: number) => {
-        const newProfiles = [...state.acl_profiles];
-        newProfiles[profileIndex].users.splice(userIndex, 1);
-        setState({ ...state, acl_profiles: newProfiles });
+        if (confirm('Are you sure you want to remove this user from the profile?')) {
+            const newProfiles = [...state.acl_profiles];
+            newProfiles[profileIndex].users.splice(userIndex, 1);
+            setState({ ...state, acl_profiles: newProfiles });
+        }
     };
 
     const updateUserInProfile = (profileIndex: number, userIndex: number, field: string, value: any) => {
@@ -67,7 +72,7 @@ export default function Acls({ state, setState }: Props) {
         <div className="space-y-8">
             <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2">
-                    <Shield className="h-5 w-5" /> ACL Profiles
+                    <Shield className="h-5 w-5" /> Access Profiles
                 </h2>
                 <button
                     onClick={addProfile}
@@ -79,18 +84,21 @@ export default function Acls({ state, setState }: Props) {
 
             <div className="grid gap-6">
                 {state.acl_profiles.map((profile, pIdx) => (
-                    <div key={pIdx} className="rounded-xl border bg-card text-card-foreground shadow overflow-hidden">
-                        <div className="bg-muted/50 p-4 flex justify-between items-center border-b">
+                    <div key={pIdx} className="rounded-xl border bg-card text-card-foreground shadow">
+                        <div className="bg-muted/50 p-4 flex justify-between items-center border-b rounded-t-xl">
                             <div className="flex items-center gap-4 flex-1">
                                 <FileText className="h-5 w-5 text-muted-foreground" />
                                 <div className="flex flex-col gap-1 flex-1">
-                                    <input
-                                        type="text"
-                                        value={profile.name}
-                                        onChange={(e) => updateProfile(pIdx, 'name', e.target.value)}
-                                        className="font-medium bg-transparent border-none p-0 focus:ring-0 h-auto text-base"
-                                        placeholder="Profile Name"
-                                    />
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="text"
+                                            value={profile.name}
+                                            onChange={(e) => updateProfile(pIdx, 'name', e.target.value)}
+                                            className="font-medium bg-transparent border-none p-0 focus:ring-0 h-auto text-base"
+                                            placeholder="Profile Name"
+                                        />
+                                        <InfoTooltip content="Name of the access profile" />
+                                    </div>
                                     <input
                                         type="text"
                                         value={profile.description}
@@ -132,14 +140,9 @@ export default function Acls({ state, setState }: Props) {
                                     <div className="space-y-2 pl-4 border-l-2 border-muted">
                                         {user.rules.map((rule, rIdx) => (
                                             <div key={rIdx} className="flex gap-2 items-center">
-                                                <select
-                                                    value={rule.type}
-                                                    onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'type', e.target.value)}
-                                                    className="h-8 rounded-md border border-input bg-transparent px-2 text-xs"
-                                                >
-                                                    <option value="topic">Topic</option>
-                                                    <option value="pattern">Pattern</option>
-                                                </select>
+                                                <div className="h-8 flex items-center px-2 text-xs font-medium text-muted-foreground bg-muted/50 rounded-md">
+                                                    Topic
+                                                </div>
                                                 <select
                                                     value={rule.access}
                                                     onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'access', e.target.value)}

@@ -1228,3 +1228,122 @@ To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
 1764163708: New connection from 172.23.0.1:51718 on port 8884.
 1764163709: New client connected from 172.23.0.1:51718 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
 1764165386: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764167134: mosquitto version 2.0.21 starting
+1764167134: Config loaded from /mymosquitto/mosquitto.conf.
+1764167134: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764167134: Opening ipv4 listen socket on port 1883.
+1764167134: Opening ipv4 listen socket on port 8883.
+1764167134: Opening ipv4 listen socket on port 8884.
+1764167134: Opening ipv4 listen socket on port 10883.
+1764167134: mosquitto version 2.0.21 running
+1764167134: New connection from 127.0.0.1:59328 on port 10883.
+1764167134: New client connected from 127.0.0.1:59328 as backend-stats-monitor (p2, c1, k60).
+1764167135: New connection from 172.23.0.1:58136 on port 8884.
+1764167135: New client connected from 172.23.0.1:58136 as mqtt-explorer-414668f6 (p2, c1, k60, u'MQTTClient').
+1764167286: Client mqtt-explorer-414668f6 has exceeded timeout, disconnecting.
+1764167631: mosquitto version 2.0.21 starting
+1764167631: Config loaded from /mymosquitto/mosquitto.conf.
+1764167631: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764167631: Opening ipv4 listen socket on port 1883.
+1764167631: Opening ipv4 listen socket on port 8883.
+1764167631: Opening ipv4 listen socket on port 8884.
+1764167631: Opening ipv4 listen socket on port 10883.
+1764167631: mosquitto version 2.0.21 running
+1764167632: New connection from 127.0.0.1:37490 on port 10883.
+1764167632: New client connected from 127.0.0.1:37490 as backend-stats-monitor (p2, c1, k60).
+1764167916: mosquitto version 2.0.21 starting
+1764167916: Config loaded from /mymosquitto/mosquitto.conf.
+1764167916: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764167916: Opening ipv4 listen socket on port 1883.
+1764167916: Opening ipv4 listen socket on port 8883.
+1764167916: Opening ipv4 listen socket on port 8884.
+1764167916: Opening ipv4 listen socket on port 10883.
+1764167916: mosquitto version 2.0.21 running
+1764167917: New connection from 127.0.0.1:40410 on port 10883.
+1764167917: New client connected from 127.0.0.1:40410 as backend-stats-monitor (p2, c1, k60).
+1764169717: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764171518: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764173319: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764175120: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764176921: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764178722: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764180523: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764182324: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764184125: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764185926: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764187727: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764189528: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764191329: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764193130: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764194931: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764196732: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764198533: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764200334: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764202135: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764203936: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764205737: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764207538: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764209339: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764211140: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764212941: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764214742: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764216543: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764218344: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764219406: mosquitto version 2.0.21 starting
+1764219406: Config loaded from /mymosquitto/mosquitto.conf.
+1764219406: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764219406: Opening ipv4 listen socket on port 1883.
+1764219406: Opening ipv4 listen socket on port 8883.
+1764219406: Opening ipv4 listen socket on port 8884.
+1764219406: Opening ipv4 listen socket on port 10883.
+1764219406: mosquitto version 2.0.21 running
+1764219407: New connection from 127.0.0.1:35616 on port 10883.
+1764219407: New client connected from 127.0.0.1:35616 as backend-stats-monitor (p2, c1, k60).
+1764220963: mosquitto version 2.0.21 starting
+1764220963: Config loaded from /mymosquitto/mosquitto.conf.
+1764220963: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764220963: Opening ipv4 listen socket on port 1883.
+1764220963: Opening ipv4 listen socket on port 8883.
+1764220963: Opening ipv4 listen socket on port 8884.
+1764220963: Opening ipv4 listen socket on port 10883.
+1764220963: mosquitto version 2.0.21 running
+1764220964: New connection from 127.0.0.1:35278 on port 10883.
+1764220964: New client connected from 127.0.0.1:35278 as backend-stats-monitor (p2, c1, k60).
+1764222201: mosquitto version 2.0.21 starting
+1764222201: Config loaded from /mymosquitto/mosquitto.conf.
+1764222201: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764222201: Opening ipv4 listen socket on port 1883.
+1764222201: Opening ipv4 listen socket on port 8883.
+1764222201: Opening ipv4 listen socket on port 8884.
+1764222201: Opening ipv4 listen socket on port 10883.
+1764222201: mosquitto version 2.0.21 running
+1764222201: New connection from 127.0.0.1:38394 on port 10883.
+1764222201: New client connected from 127.0.0.1:38394 as backend-stats-monitor (p2, c1, k60).
+1764222914: mosquitto version 2.0.21 starting
+1764222914: Config loaded from /mymosquitto/mosquitto.conf.
+1764222914: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764222914: Opening ipv4 listen socket on port 1883.
+1764222914: Opening ipv4 listen socket on port 8883.
+1764222914: Opening ipv4 listen socket on port 8884.
+1764222914: Opening ipv4 listen socket on port 10883.
+1764222914: mosquitto version 2.0.21 running
+1764222915: New connection from 127.0.0.1:44676 on port 10883.
+1764222915: New client connected from 127.0.0.1:44676 as backend-stats-monitor (p2, c1, k60).
+1764223708: mosquitto version 2.0.21 starting
+1764223708: Config loaded from /mymosquitto/mosquitto.conf.
+1764223708: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764223708: Opening ipv4 listen socket on port 1883.
+1764223708: Opening ipv4 listen socket on port 8883.
+1764223708: Opening ipv4 listen socket on port 8884.
+1764223708: Opening ipv4 listen socket on port 10883.
+1764223708: mosquitto version 2.0.21 running
+1764223708: New connection from 127.0.0.1:47244 on port 10883.
+1764223708: New client connected from 127.0.0.1:47244 as backend-stats-monitor (p2, c1, k60).

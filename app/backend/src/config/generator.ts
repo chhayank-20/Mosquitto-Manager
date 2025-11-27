@@ -31,6 +31,8 @@ export const generateMosquittoConf = (state: AppState): string => {
 
     // Listeners
     state.listeners.forEach(l => {
+        if (l.enabled === false) return; // Skip disabled listeners
+
         lines.push(`# ===========================================================`);
         lines.push(`# Listener: ${l.id}`);
         lines.push(`# ===========================================================`);
@@ -45,10 +47,13 @@ export const generateMosquittoConf = (state: AppState): string => {
         }
 
         // TLS
+        // TLS
         if (l.protocol === 'mqtts' || l.protocol === 'wss') {
-            if (l.cafile) lines.push(`cafile ${l.cafile}`);
-            if (l.certfile) lines.push(`certfile ${l.certfile}`);
-            if (l.keyfile) lines.push(`keyfile ${l.keyfile}`);
+            if (state.global_settings.certificates) {
+                if (state.global_settings.certificates.cafile) lines.push(`cafile ${state.global_settings.certificates.cafile}`);
+                if (state.global_settings.certificates.certfile) lines.push(`certfile ${state.global_settings.certificates.certfile}`);
+                if (state.global_settings.certificates.keyfile) lines.push(`keyfile ${state.global_settings.certificates.keyfile}`);
+            }
             if (l.tls_version) lines.push(`tls_version ${l.tls_version}`);
         }
 
@@ -106,8 +111,6 @@ export const generateAclFiles = (state: AppState): Record<string, string> => {
             for (const rule of userEntry.rules) {
                 if (rule.type === 'topic') {
                     lines.push(`topic ${rule.access} ${rule.value}`);
-                } else if (rule.type === 'pattern') {
-                    lines.push(`pattern ${rule.access} ${rule.value}`);
                 }
             }
             lines.push('');

@@ -10,6 +10,8 @@ import UsersList from './components/Users';
 import AclsList from './components/Acls';
 import Logs from './components/Logs';
 
+import { ThemeToggle } from './components/ThemeToggle';
+
 function App() {
   const [state, setState] = useState<AppState | null>(null);
   const [stats, setStats] = useState<BrokerStats | null>(null);
@@ -21,6 +23,16 @@ function App() {
   const [applying, setApplying] = useState(false);
 
   useEffect(() => {
+    // Initialize theme
+    const savedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
     loadData();
     const socket = initSocket(
       (newStats) => setStats(newStats),
@@ -86,13 +98,13 @@ function App() {
   );
 
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <div className="hidden border-r bg-muted/40 md:block">
+    <div className="grid h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] overflow-hidden">
+      <div className="hidden border-r bg-muted/40 md:block overflow-y-auto">
         <div className="flex h-full max-h-screen flex-col gap-2">
-          <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
+          <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 sticky top-0 bg-muted/40 z-10">
             <div className="flex items-center gap-2 font-semibold">
               <Activity className="h-6 w-6 text-primary" />
-              <span className="">Mosquitto Manager</span>
+              <span className="">मच्छर Manager</span>
             </div>
           </div>
           <div className="flex-1">
@@ -109,12 +121,13 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+      <div className="flex flex-col h-screen overflow-hidden">
+        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6 shrink-0">
           <div className="w-full flex-1">
-            <h1 className="text-lg font-semibold capitalize">{activeTab}</h1>
+            <h1 className="text-lg font-semibold capitalize">{activeTab === 'acls' ? 'Access Profiles' : activeTab}</h1>
           </div>
           <div className="flex gap-2">
+            <ThemeToggle />
             <button
               onClick={handleSave}
               disabled={saving}
@@ -133,7 +146,7 @@ function App() {
             </button>
           </div>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 bg-background text-foreground">
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6 bg-background text-foreground">
           {activeTab === 'dashboard' && <Dashboard stats={stats} clients={clients} listeners={state?.listeners || []} />}
           {activeTab === 'listeners' && (
             <Listeners state={state} setState={setState} />
