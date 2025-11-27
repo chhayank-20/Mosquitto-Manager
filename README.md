@@ -56,7 +56,7 @@ Get your broker up and running in minutes.
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/mosquitto-manager.git
+    git clone https://github.com/chhayank-20/mosquitto-manager.git
     cd mosquitto-manager
     ```
 

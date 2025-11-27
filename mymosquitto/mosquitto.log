@@ -1389,3 +1389,4 @@ To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
 1764226321: mosquitto version 2.0.21 running
 1764226321: New connection from 127.0.0.1:41312 on port 10883.
 1764226321: New client connected from 127.0.0.1:41312 as backend-stats-monitor (p2, c1, k60).
+1764228122: Saving in-memory database to /mymosquitto/data//mosquitto.db.
