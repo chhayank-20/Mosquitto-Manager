@@ -1347,3 +1347,36 @@ To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
 1764223708: mosquitto version 2.0.21 running
 1764223708: New connection from 127.0.0.1:47244 on port 10883.
 1764223708: New client connected from 127.0.0.1:47244 as backend-stats-monitor (p2, c1, k60).
+1764223994: mosquitto version 2.0.21 starting
+1764223994: Config loaded from /mymosquitto/mosquitto.conf.
+1764223994: Warning: File /mymosquitto/acls/AvNex.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/AvNex.conf`.
+1764223994: Opening ipv4 listen socket on port 1883.
+1764223994: Opening ipv4 listen socket on port 8883.
+1764223994: Opening ipv4 listen socket on port 8884.
+1764223994: Opening ipv4 listen socket on port 10883.
+1764223994: mosquitto version 2.0.21 running
+1764223994: New connection from 127.0.0.1:44566 on port 10883.
+1764223994: New client connected from 127.0.0.1:44566 as backend-stats-monitor (p2, c1, k60).
+1764224097: New connection from 172.23.0.1:43654 on port 1883.
+1764224097: New client connected from 172.23.0.1:43654 as mqttx_9733428b (p5, c1, k60).
+1764224425: mosquitto version 2.0.21 terminating
+1764224425: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1764224426: mosquitto version 2.0.21 starting
+1764224426: Config loaded from /mymosquitto/mosquitto.conf.
+1764224426: Warning: File /mymosquitto/acls/user101.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
+1764224426: Opening ipv4 listen socket on port 1883.
+1764224426: Opening ipv4 listen socket on port 10883.
+1764224426: mosquitto version 2.0.21 running
+1764224427: New connection from 127.0.0.1:37236 on port 10883.
+1764224427: New client connected from 127.0.0.1:37236 as backend-stats-monitor (p2, c1, k60).
+1764224459: New connection from 172.23.0.1:49446 on port 1883.
+1764224459: New client connected from 172.23.0.1:49446 as mqttx_9733428b (p5, c1, k60).
+1764224549: Client mqttx_9733428b disconnected.
+1764224562: New connection from 172.23.0.1:39130 on port 1883.
+1764224562: New client connected from 172.23.0.1:39130 as mqttx_9733428b (p5, c1, k60, u'user12').
+1764224572: Client mqttx_9733428b disconnected.
+1764224576: New connection from 172.23.0.1:50820 on port 1883.
+1764224576: New client connected from 172.23.0.1:50820 as mqttx_9733428b (p5, c1, k60, u'user1').
+1764224609: Client mqttx_9733428b disconnected.

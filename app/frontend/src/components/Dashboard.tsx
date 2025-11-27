@@ -33,7 +33,7 @@ export default function Dashboard({ stats, clients, listeners }: Props) {
         {
             title: 'Active Clients',
             value: stats.clientsActive,
-            subValue: `Total: ${stats.clientsTotal}`,
+            subValue: `Total: ${stats.clientsTotal}     ( 1 is default monitoring dashboard)`,
             icon: Users,
             color: 'text-blue-500',
         },
