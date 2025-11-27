@@ -1380,3 +1380,12 @@ To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
 1764224576: New connection from 172.23.0.1:50820 on port 1883.
 1764224576: New client connected from 172.23.0.1:50820 as mqttx_9733428b (p5, c1, k60, u'user1').
 1764224609: Client mqttx_9733428b disconnected.
+1764226321: mosquitto version 2.0.21 starting
+1764226321: Config loaded from /mymosquitto/mosquitto.conf.
+1764226321: Warning: File /mymosquitto/acls/user101.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
+1764226321: Opening ipv4 listen socket on port 1883.
+1764226321: Opening ipv4 listen socket on port 10883.
+1764226321: mosquitto version 2.0.21 running
+1764226321: New connection from 127.0.0.1:41312 on port 10883.
+1764226321: New client connected from 127.0.0.1:41312 as backend-stats-monitor (p2, c1, k60).
