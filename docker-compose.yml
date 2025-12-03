@@ -13,5 +13,6 @@ services:
     environment:
       - WEB_USERNAME=admin
       - WEB_PASSWORD=admin
+      - DATA_DIR=/mymosquitto
     volumes:
       - ./mymosquitto:/mymosquitto

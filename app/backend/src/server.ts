@@ -108,8 +108,8 @@ app.post('/api/apply', async (req, res) => {
         const passwordFile = path.join(MOSQUITTO_DIR, 'passwordfile');
         // Create empty file or overwrite
         fs.writeFileSync(passwordFile, '');
-        // Fix permissions (Mosquitto complains if world readable)
-        fs.chmodSync(passwordFile, '0700');
+        // Fix permissions (User requested full access)
+        fs.chmodSync(passwordFile, '0777');
 
         for (const user of state.users) {
             if (user.enabled) {
@@ -127,6 +127,12 @@ app.post('/api/apply', async (req, res) => {
                 }
             }
         }
+
+        // Ensure permissions are still correct after mosquitto_passwd
+        if (fs.existsSync(passwordFile)) {
+            fs.chmodSync(passwordFile, '0777');
+        }
+
         const aclFiles = generateAclFiles(state);
 
         fs.writeFileSync(path.join(MOSQUITTO_DIR, 'mosquitto.conf'), mosquittoConf);
@@ -239,4 +245,6 @@ app.get(/(.*)/, (req, res) => {
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+    // Initialize state (creates state.json if missing)
+    loadState();
 });

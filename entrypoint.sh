@@ -2,7 +2,16 @@
 set -e
 
 # Ensure folders exist
-mkdir -p /mymosquitto/data /mymosquitto/log
+mkdir -p /mymosquitto/data /mymosquitto/log /mymosquitto/acls /mymosquitto/certs
+
+# Ensure passwordfile exists
+if [ ! -f /mymosquitto/passwordfile ]; then
+    echo "Creating empty passwordfile..."
+    touch /mymosquitto/passwordfile
+fi
+
+# Grant full permissions to mounted directory (Fixes write issues)
+chmod -R 777 /mymosquitto
 
 # If no config yet, create a minimal default so mosquitto can start
 if [ ! -f /mymosquitto/mosquitto.conf ]; then
