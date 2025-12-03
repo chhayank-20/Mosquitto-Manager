@@ -1554,3 +1554,19 @@ To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
 1764753222: mosquitto version 2.0.21 running
 1764753222: New connection from 127.0.0.1:59890 on port 10883.
 1764753222: New client connected from 127.0.0.1:59890 as backend-stats-monitor (p2, c1, k60).
+1764753777: mosquitto version 2.0.21 starting
+1764753777: Config loaded from /mymosquitto/mosquitto.conf.
+1764753777: Opening ipv4 listen socket on port 1883.
+1764753777: Opening ipv4 listen socket on port 10883.
+1764753777: mosquitto version 2.0.21 running
+1764753778: New connection from 127.0.0.1:59446 on port 10883.
+1764753778: New client connected from 127.0.0.1:59446 as backend-stats-monitor (p2, c1, k60).
+1764754103: mosquitto version 2.0.21 starting
+1764754103: Config loaded from /mymosquitto/mosquitto.conf.
+1764754103: Opening ipv4 listen socket on port 1883.
+1764754103: Opening ipv4 listen socket on port 10883.
+1764754103: mosquitto version 2.0.21 running
+1764754103: New connection from 127.0.0.1:51688 on port 10883.
+1764754103: New client connected from 127.0.0.1:51688 as backend-stats-monitor (p2, c1, k60).
+1764754152: mosquitto version 2.0.21 terminating
+1764754152: Saving in-memory database to /mymosquitto/data//mosquitto.db.

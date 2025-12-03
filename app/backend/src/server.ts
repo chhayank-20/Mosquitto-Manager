@@ -220,6 +220,53 @@ app.post('/api/certs/upload', upload.single('file'), (req, res) => {
     res.json({ success: true, path: filePath });
 });
 
+// --- Backup & Restore ---
+
+app.get('/api/backup/export', (req, res) => {
+    try {
+        const state = loadState();
+        res.setHeader('Content-Disposition', 'attachment; filename="mosquitto-manager-config.json"');
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(state, null, 2));
+    } catch (error: any) {
+        res.status(500).send(error.message);
+    }
+});
+
+const uploadConfig = multer({ storage: multer.memoryStorage() });
+
+app.post('/api/backup/import', uploadConfig.single('file'), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ success: false, error: 'No file uploaded' });
+        }
+
+        const content = req.file.buffer.toString('utf-8');
+        let newState: AppState;
+        try {
+            newState = JSON.parse(content);
+        } catch (e) {
+            return res.status(400).json({ success: false, error: 'Invalid JSON file' });
+        }
+
+        // Basic validation
+        if (!newState.listeners || !Array.isArray(newState.listeners)) {
+            return res.status(400).json({ success: false, error: 'Invalid configuration format: missing listeners' });
+        }
+
+        // Save the new state
+        saveState(newState);
+
+        // We DO NOT auto-apply. We let the user review and click "Apply" in the UI.
+        // This is safer.
+
+        res.json({ success: true, message: 'Configuration imported successfully. Please review and click "Apply Config".' });
+    } catch (error: any) {
+        console.error('Import error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 app.get('/api/certs/download', (req, res) => {
     const filePath = req.query.path as string;
     if (!filePath) {

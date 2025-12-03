@@ -42,6 +42,42 @@ export const getDownloadUrl = (path: string): string => {
     return `${API_URL}/certs/download?path=${encodeURIComponent(path)}`;
 };
 
+export const exportConfig = async () => {
+    const response = await fetch(`${API_URL}/backup/export`, {
+    });
+    if (!response.ok) {
+        throw new Error('Failed to export configuration');
+    }
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'mosquitto-manager-config.json';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+};
+
+export const importConfig = async (file: File) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch(`${API_URL}/backup/import`, {
+        method: 'POST',
+        headers: {
+            // 'Content-Type': 'multipart/form-data', // Fetch sets this automatically with boundary
+        },
+        body: formData,
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to import configuration');
+    }
+    return response.json();
+};
+
 export const saveState = async (state: AppState): Promise<void> => {
     await axios.post(`${API_URL}/state`, state);
 };

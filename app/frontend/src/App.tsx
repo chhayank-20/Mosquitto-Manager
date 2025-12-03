@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Activity, Users as UsersIcon, Shield, Save, RefreshCw, Wifi } from 'lucide-react';
+import { Activity, Users as UsersIcon, Shield, Save, RefreshCw, Wifi, Settings as SettingsIcon } from 'lucide-react';
 import { getState, saveState, applyConfig, initSocket } from './api';
 import type { AppState, BrokerStats, ConnectedClient } from './types';
 import { cn } from './lib/utils';
@@ -9,6 +9,7 @@ import Listeners from './components/Listeners';
 import UsersList from './components/Users';
 import AclsList from './components/Acls';
 import Logs from './components/Logs';
+import { Settings } from './components/Settings';
 
 import { ThemeToggle } from './components/ThemeToggle';
 
@@ -18,7 +19,7 @@ function App() {
   const [clients, setClients] = useState<ConnectedClient[]>([]);
 
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'listeners' | 'users' | 'acls' | 'logs'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'listeners' | 'users' | 'acls' | 'logs' | 'settings'>('dashboard');
   const [saving, setSaving] = useState(false);
   const [applying, setApplying] = useState(false);
 
@@ -114,6 +115,7 @@ function App() {
               <NavItem id="users" icon={UsersIcon} label="Users" />
               <NavItem id="acls" icon={Shield} label="Access Profiles" />
               <NavItem id="logs" icon={Activity} label="Logs" />
+              <NavItem id="settings" icon={SettingsIcon} label="Settings" />
             </nav>
           </div>
           <div className="mt-auto p-4">
@@ -159,6 +161,9 @@ function App() {
           )}
           {activeTab === 'logs' && (
             <Logs />
+          )}
+          {activeTab === 'settings' && (
+            <Settings onImportSuccess={loadData} />
           )}
         </main>
       </div>
