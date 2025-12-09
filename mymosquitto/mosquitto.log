@@ -1726,3 +1726,7 @@ To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
 1765264063: New connection from 172.23.0.1:43688 on port 8884.
 1765264063: New client connected from 172.23.0.1:43688 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'user2').
 1765264067: Client postman-mqtt-client-1764138668559 disconnected.
+1765264249: New connection from 172.23.0.1:56372 on port 8884.
+1765264249: New client connected from 172.23.0.1:56372 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'user2').
+1765264252: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1765264256: Client postman-mqtt-client-1764138668559 disconnected.

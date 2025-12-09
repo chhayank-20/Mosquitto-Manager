@@ -68,7 +68,7 @@ Get your broker up and running in minutes.
 
 3.  **Access the Dashboard**:
     Open your browser and navigate to:
-    👉 **http://localhost:4000** (HTTP)
+    👉 **http://localhost:3000** (HTTP)  
     👉 **https://localhost:3001** (HTTPS)
 
     **Default Web Credentials:**
@@ -85,10 +85,10 @@ Get your broker up and running in minutes.
 - **Backup/Restore**: Export your entire configuration to a JSON file and restore it later via the **Settings** page.
 
 ### Default Ports
-*   **3000**: Web Management UI
+*   **3000**: Web Management UI (http)
+*   **4000**: Web Management UI (https)
 *   **1883**: Default MQTT Listener
 *   **8883**: Default MQTTS Listener (if configured)
-*   **9001**: Default WebSocket Listener (if configured)
 
 ---
 

@@ -7,10 +7,8 @@ services:
     ports:
       - "1883:1883" # MQTT (Unencrypted)
       - "8883:8883" # MQTTS (TLS)
-      - "4000:3000" # Web UI (HTTP) - Mapped to host port 4000
+      - "3000:3000" # Web UI (HTTP)
       - "3001:3001" # Web UI (HTTPS)
-      - "9001:9001" # MQTT over WebSockets
-      - "8884:8884" # MQTTS over WebSockets
     environment:
       - WEB_USERNAME=admin
       - WEB_PASSWORD=admin
