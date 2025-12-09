@@ -88,14 +88,29 @@ export class ClientTracker {
                     });
                     this.emitUpdate();
                 }
-            } else if (line.includes('disconnected')) {
+            } else if (line.includes('disconnected') || line.includes('closed its connection') || line.includes('has exceeded timeout')) {
                 // Client client_id disconnected.
-                const match = line.match(/Client ([^ ]+) disconnected/);
+                // Client client_id closed its connection.
+                // Client client_id has exceeded timeout
+                const match = line.match(/Client ([^ ]+) (disconnected|closed its connection|has exceeded timeout)/);
                 if (match) {
                     const clientId = match[1];
                     this.clients.delete(clientId);
                     this.emitUpdate();
                 }
+            } else if (line.includes('already connected, closing old connection')) {
+                // Client client_id already connected, closing old connection.
+                // This means the OLD connection is closed, but a NEW "New client connected" line usually follows or precedes.
+                // If we delete it here, we might delete the NEW connection if the logs are out of order or if the map key is same.
+                // Actually, "New client connected" overwrites the Map entry.
+                // So "closing old connection" doesn't need to delete, because the new one is authoritative.
+                // BUT if the new one happened *before* this line in processing?
+                // Usually "New client connected" comes *before* or *after*?
+                // Log:
+                // New client ... as mqttx...
+                // Client mqttx... already connected, closing old connection.
+                // If "New" comes first, we add it. Then "closing old" comes. If we delete, we lose the new one.
+                // So we should IGNORE "closing old connection" because the "New client" event is the source of truth for the *active* session.
             }
         } catch (e) {
             console.error('Error parsing log line:', line, e);

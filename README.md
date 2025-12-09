@@ -124,6 +124,13 @@ Easily configure multiple listeners on different ports.
 
 ![Logs UI](imgs/logs.png)
 
+### ⚙️ Settings & Persistence
+*   **Backup Config**: Download your current broker state (listeners, users, ACLs) as a JSON file.
+*   **Restore Config**: Upload a previously saved state to restore your broker configuration instantly.
+*   **Persistent Storage**: All settings are automatically saved to disk, surviving container restarts.
+
+![Settings UI](imgs/settings.png)
+
 ---
 
 ## ⚙️ Configuration
