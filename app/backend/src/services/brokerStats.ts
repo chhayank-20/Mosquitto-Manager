@@ -10,6 +10,8 @@ export interface BrokerStats {
     loadMessagesSent1min: number;
     bytesReceived: number;
     bytesSent: number;
+    subscriptionsCount: number;
+    retainedMessagesCount: number;
 }
 
 export class BrokerStatsService {
@@ -24,12 +26,18 @@ export class BrokerStatsService {
         loadMessagesSent1min: 0,
         bytesReceived: 0,
         bytesSent: 0,
+        subscriptionsCount: 0,
+        retainedMessagesCount: 0,
     };
     private onStatsUpdate: (stats: BrokerStats) => void;
-    private mqttUrl: string = 'mqtt://127.0.0.1:10883';
+    private mqttUrl: string = process.env.MQTT_URL || 'mqtt://127.0.0.1:10883';
+    private username?: string;
+    private password?: string;
 
-    constructor(onStatsUpdate: (stats: BrokerStats) => void) {
+    constructor(onStatsUpdate: (stats: BrokerStats) => void, username?: string, password?: string) {
         this.onStatsUpdate = onStatsUpdate;
+        this.username = username;
+        this.password = password;
     }
 
     public start() {
@@ -37,23 +45,35 @@ export class BrokerStatsService {
         // We assume the backend is in the same network/container as mosquitto
         this.client = mqtt.connect(this.mqttUrl, {
             clientId: 'backend-stats-monitor',
-            // If auth is enabled, we might need credentials. 
-            // For now, we assume we can connect (maybe via a special listener or localhost exception).
-            // If localhost listener allows anonymous, this works.
+            username: this.username,
+            password: this.password,
+            rejectUnauthorized: false
         });
 
         this.client.on('connect', () => {
             console.log('Stats service connected to MQTT broker');
-            this.client?.subscribe('$SYS/#');
+            this.client?.subscribe('$SYS/#', (err) => {
+                if (err) console.error('Failed to subscribe to $SYS/#:', err);
+                else console.log('Subscribed to $SYS/# successfully');
+            });
         });
 
         this.client.on('message', (topic, message) => {
+            // console.log(`Stats debug: Received ${topic}`);
             const value = message.toString();
             this.updateStat(topic, value);
         });
 
         this.client.on('error', (err) => {
             console.error('Stats service MQTT error:', err);
+        });
+
+        this.client.on('offline', () => {
+            console.log('Stats service MQTT client offline');
+        });
+
+        this.client.on('reconnect', () => {
+            console.log('Stats service MQTT client reconnecting');
         });
     }
 
@@ -98,6 +118,12 @@ export class BrokerStatsService {
             changed = true;
         } else if (topic.endsWith('/bytes/sent')) {
             this.stats.bytesSent = num;
+            changed = true;
+        } else if (topic.endsWith('/subscriptions/count')) {
+            this.stats.subscriptionsCount = num;
+            changed = true;
+        } else if (topic.endsWith('/retained messages/count')) {
+            this.stats.retainedMessagesCount = num;
             changed = true;
         }
 

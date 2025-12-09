@@ -23,8 +23,6 @@ export class ClientTracker {
         // Ensure file exists
         if (!fs.existsSync(this.logFile)) {
             console.warn(`Log file ${this.logFile} does not exist yet. Waiting...`);
-            // In a real app, we'd watch for file creation. 
-            // For now, let's just try to create it or fail gracefully.
             try {
                 fs.writeFileSync(this.logFile, '');
             } catch (e) {
@@ -34,7 +32,24 @@ export class ClientTracker {
         }
 
         console.log(`Tracking clients via log: ${this.logFile}`);
-        this.tail = new Tail(this.logFile);
+
+        // 1. Read existing file content to restore state
+        try {
+            const content = fs.readFileSync(this.logFile, 'utf-8');
+            const lines = content.split('\n');
+            console.log(`Restoring client state from ${lines.length} log lines...`);
+            lines.forEach(line => this.parseLine(line));
+            this.emitUpdate(); // Emit initial state
+        } catch (error) {
+            console.error('Error reading existing log file:', error);
+        }
+
+        // 2. Start tailing for new events
+        // Use useWatchFile: true (polling) for reliable file watching in Docker volumes
+        this.tail = new Tail(this.logFile, {
+            useWatchFile: true,
+            fsWatchOptions: { interval: 200 } // Check every 200ms
+        });
 
         this.tail.on('line', (line: string) => {
             this.parseLine(line);

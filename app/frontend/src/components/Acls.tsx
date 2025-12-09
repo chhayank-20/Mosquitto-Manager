@@ -1,5 +1,5 @@
 import type { AppState, AclProfile, AclRule } from '../types';
-import { Shield, Plus, Trash2, FileText } from 'lucide-react';
+import { Shield, Plus, Trash2, FileText, ChevronDown } from 'lucide-react';
 import { InfoTooltip } from './InfoTooltip';
 
 
@@ -68,6 +68,14 @@ export default function Acls({ state, setState }: Props) {
         setState({ ...state, acl_profiles: newProfiles });
     };
 
+    const removeRule = (profileIndex: number, userIndex: number, ruleIndex: number) => {
+        if (confirm('Are you sure you want to delete this rule?')) {
+            const newProfiles = [...state.acl_profiles];
+            newProfiles[profileIndex].users[userIndex].rules.splice(ruleIndex, 1);
+            setState({ ...state, acl_profiles: newProfiles });
+        }
+    };
+
     return (
         <div className="space-y-8">
             <div className="flex justify-between items-center">
@@ -122,12 +130,22 @@ export default function Acls({ state, setState }: Props) {
                                     <div className="flex justify-between items-center">
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm font-medium text-muted-foreground">User:</span>
-                                            <input
-                                                type="text"
-                                                value={user.username}
-                                                onChange={(e) => updateUserInProfile(pIdx, uIdx, 'username', e.target.value)}
-                                                className="flex h-8 w-48 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                                            />
+                                            <div className="relative">
+                                                <select
+                                                    value={user.username}
+                                                    onChange={(e) => updateUserInProfile(pIdx, uIdx, 'username', e.target.value)}
+                                                    className="flex h-8 w-48 appearance-none rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 pr-8"
+                                                >
+                                                    <option value="" disabled>Select User</option>
+                                                    {state.users.map((u) => (
+                                                        <option key={u.username} value={u.username}>
+                                                            {u.username}
+                                                        </option>
+                                                    ))}
+                                                    <option value="new_user">Custom / New User</option>
+                                                </select>
+                                                <ChevronDown className="absolute right-2 top-2.5 h-3 w-3 opacity-50 pointer-events-none" />
+                                            </div>
                                         </div>
                                         <button
                                             onClick={() => removeUserFromProfile(pIdx, uIdx)}
@@ -139,25 +157,35 @@ export default function Acls({ state, setState }: Props) {
 
                                     <div className="space-y-2 pl-4 border-l-2 border-muted">
                                         {user.rules.map((rule, rIdx) => (
-                                            <div key={rIdx} className="flex gap-2 items-center">
+                                            <div key={rIdx} className="flex gap-2 items-center group">
                                                 <div className="h-8 flex items-center px-2 text-xs font-medium text-muted-foreground bg-muted/50 rounded-md">
                                                     Topic
                                                 </div>
-                                                <select
-                                                    value={rule.access}
-                                                    onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'access', e.target.value)}
-                                                    className="h-8 rounded-md border border-input bg-transparent px-2 text-xs"
-                                                >
-                                                    <option value="read">Read</option>
-                                                    <option value="write">Write</option>
-                                                    <option value="readwrite">Read/Write</option>
-                                                </select>
+                                                <div className="relative">
+                                                    <select
+                                                        value={rule.access}
+                                                        onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'access', e.target.value)}
+                                                        className="h-8 appearance-none rounded-md border border-input bg-background px-2 pr-6 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                                                    >
+                                                        <option value="read">Read</option>
+                                                        <option value="write">Write</option>
+                                                        <option value="readwrite">Read/Write</option>
+                                                    </select>
+                                                    <ChevronDown className="absolute right-1.5 top-2.5 h-3 w-3 opacity-50 pointer-events-none" />
+                                                </div>
                                                 <input
                                                     type="text"
                                                     value={rule.value}
                                                     onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'value', e.target.value)}
-                                                    className="flex-1 h-8 rounded-md border border-input bg-transparent px-3 text-xs"
+                                                    className="flex-1 h-8 rounded-md border border-input bg-transparent px-3 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                                                 />
+                                                <button
+                                                    onClick={() => removeRule(pIdx, uIdx, rIdx)}
+                                                    className="text-muted-foreground hover:text-destructive opacity-0 group-hover:opacity-100 transition-opacity p-1"
+                                                    title="Delete Rule"
+                                                >
+                                                    <Trash2 className="h-3.5 w-3.5" />
+                                                </button>
                                             </div>
                                         ))}
                                         <button

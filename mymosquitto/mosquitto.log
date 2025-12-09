@@ -1570,3 +1570,159 @@ To fix this, use `chmod 0700 /mymosquitto/acls/user101.conf`.
 1764754103: New client connected from 127.0.0.1:51688 as backend-stats-monitor (p2, c1, k60).
 1764754152: mosquitto version 2.0.21 terminating
 1764754152: Saving in-memory database to /mymosquitto/data//mosquitto.db.
+1765201159: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201429: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201429: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765201429: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765201430: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201641: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201641: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765201641: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765201641: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201721: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201854: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201854: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201854: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765201957: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201957: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765201957: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202403: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202403: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202403: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202403: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202403: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202403: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765202403: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765202404: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202404: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202404: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202404: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202404: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202773: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202773: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202773: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202773: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202773: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202773: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765202773: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765202774: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202827: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202827: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202827: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202827: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202827: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202827: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765202827: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765202986: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202986: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765202986: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765202986: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765202986: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765202986: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765202986: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765203131: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203131: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765203131: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765203131: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203131: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765203131: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765203131: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765203273: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203273: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765203273: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765203273: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203273: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765203273: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765203273: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765203413: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203413: Warning: File /mymosquitto/passwordfile owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/passwordfile`.
+1765203413: Warning: File /mymosquitto/passwordfile group is not mosquitto. Future versions will refuse to load this file.
+1765203413: Warning: File /mymosquitto/passwordfile has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/passwordfile`.
+1765203413: Warning: File /mymosquitto/acls/profile_1.conf has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mymosquitto/acls/profile_1.conf`.
+1765203413: Warning: File /mymosquitto/acls/profile_1.conf owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mymosquitto/acls/profile_1.conf`.
+1765203413: Warning: File /mymosquitto/acls/profile_1.conf group is not mosquitto. Future versions will refuse to load this file.
+1765203473: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203473: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203473: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203473: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203474: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203474: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203474: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203474: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203475: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203475: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203477: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203477: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203481: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203481: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203487: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203487: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203501: Error: Unable to open pwfile "/etc/mosquitto/secure/passwordfile".
+1765203501: Error opening password file "/etc/mosquitto/secure/passwordfile".
+1765203525: Error: It is not currently possible to add/remove listeners when reloading the config file.
+1765203525: Error found at /mymosquitto/mosquitto.conf:17.
+1765262451: mosquitto version 2.0.21 starting
+1765262451: Config loaded from /mymosquitto/mosquitto.conf.
+1765262451: Opening ipv4 listen socket on port 1883.
+1765262451: Opening ipv4 listen socket on port 8884.
+1765262451: Opening ipv4 listen socket on port 10883.
+1765262451: mosquitto version 2.0.21 running
+1765262451: New connection from 127.0.0.1:40346 on port 10883.
+1765262451: New client connected from 127.0.0.1:40346 as backend-stats-monitor (p2, c1, k60, u'sys_monitor').
+1765262478: New connection from 127.0.0.1:58242 on port 1883.
+1765262478: New client connected from 127.0.0.1:58242 as auto-6B7AD01F-2434-7E46-1777-61C045690DEE (p2, c1, k60).
+1765262478: Client auto-6B7AD01F-2434-7E46-1777-61C045690DEE disconnected.
+1765264041: New connection from 172.23.0.1:38036 on port 8884.
+1765264041: New client connected from 172.23.0.1:38036 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'user2').
+1765264043: Client postman-mqtt-client-1764138668559 disconnected.
+1765264052: New connection from 172.23.0.1:55336 on port 8884.
+1765264052: New client connected from 172.23.0.1:55336 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'user2').
+1765264054: Client postman-mqtt-client-1764138668559 disconnected.
+1765264063: New connection from 172.23.0.1:43688 on port 8884.
+1765264063: New client connected from 172.23.0.1:43688 as postman-mqtt-client-1764138668559 (p5, c0, k60, u'user2').
+1765264067: Client postman-mqtt-client-1764138668559 disconnected.

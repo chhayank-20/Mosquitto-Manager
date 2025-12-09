@@ -2,16 +2,44 @@
 set -e
 
 # Ensure folders exist
-mkdir -p /mymosquitto/data /mymosquitto/log /mymosquitto/acls /mymosquitto/certs
+mkdir -p /mymosquitto/data /mymosquitto/log /mymosquitto/acls /mymosquitto/certs/web
 
-# Ensure passwordfile exists
+# Ensure passwordfile exists in SOURCE
 if [ ! -f /mymosquitto/passwordfile ]; then
     echo "Creating empty passwordfile..."
     touch /mymosquitto/passwordfile
 fi
 
-# Grant full permissions to mounted directory (Fixes write issues)
-chmod -R 777 /mymosquitto
+# Pre-seed SECURE config to prevents crash on start if config points to it
+SECURE_DIR="/etc/mosquitto/secure"
+mkdir -p "$SECURE_DIR/acls"
+
+# Copy if exists, otherwise touch
+if [ -f /mymosquitto/passwordfile ]; then
+    cp /mymosquitto/passwordfile "$SECURE_DIR/passwordfile"
+else
+    touch "$SECURE_DIR/passwordfile"
+fi
+
+# Copy ACLs
+if [ -d /mymosquitto/acls ]; then
+    cp -r /mymosquitto/acls/* "$SECURE_DIR/acls/" 2>/dev/null || true
+fi
+
+# Fix permissions for secure dir (Mosquitto uid 100)
+# Fix permissions for secure dir (Mosquitto uid 100)
+chown -R 100:101 "$SECURE_DIR"
+chmod -R 0700 "$SECURE_DIR"
+
+# Fix permissions for log file
+if [ -f /mymosquitto/mosquitto.log ]; then
+    chown 100:101 /mymosquitto/mosquitto.log
+    chmod 0644 /mymosquitto/mosquitto.log
+fi
+
+# Ensure data dir is writable by Mosquitto
+chown -R 100:101 /mymosquitto/data
+chmod -R 0700 /mymosquitto/data
 
 # If no config yet, create a minimal default so mosquitto can start
 if [ ! -f /mymosquitto/mosquitto.conf ]; then

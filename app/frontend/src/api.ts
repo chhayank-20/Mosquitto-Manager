@@ -78,6 +78,23 @@ export const importConfig = async (file: File) => {
     return response.json();
 };
 
+export const uploadWebCerts = async (keyFile: File, certFile: File) => {
+    const formData = new FormData();
+    formData.append('key', keyFile);
+    formData.append('cert', certFile);
+
+    const response = await fetch(`${API_URL}/settings/web-certs`, {
+        method: 'POST',
+        body: formData,
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to upload web certificates');
+    }
+    return response.json();
+};
+
 export const saveState = async (state: AppState): Promise<void> => {
     await axios.post(`${API_URL}/state`, state);
 };

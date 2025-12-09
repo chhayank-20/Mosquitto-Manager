@@ -44,6 +44,7 @@ Setting up a production-ready Mosquitto broker often involves a steep learning c
 
 ---
 
+
 ## 🚀 Quick Start with Docker
 
 Get your broker up and running in minutes.
@@ -67,11 +68,21 @@ Get your broker up and running in minutes.
 
 3.  **Access the Dashboard**:
     Open your browser and navigate to:
-    👉 **http://localhost:3000**
+    👉 **http://localhost:4000** (HTTP)
+    👉 **https://localhost:3001** (HTTPS)
 
     **Default Web Credentials:**
     *   **Username**: `admin`
     *   **Password**: `admin`
+
+### Web Interface Security
+- **Dual Access**: The interface is available via **HTTP (Port 4000)** and **HTTPS (Port 3001)**.
+- **Auto-TLS**: Self-signed certificates are automatically generated on first startup for immediate HTTPS support.
+- **Custom Certs**: Upload your own `server.crt` and `server.key` via the **Settings** page to replace the auto-generated ones.
+
+### Configuration Management
+- **Persistence**: All configuration (listeners, users, ACLs) is saved to `state.json` in the persistant volume.
+- **Backup/Restore**: Export your entire configuration to a JSON file and restore it later via the **Settings** page.
 
 ### Default Ports
 *   **3000**: Web Management UI

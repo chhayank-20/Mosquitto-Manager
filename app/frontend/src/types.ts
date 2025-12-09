@@ -68,6 +68,8 @@ export interface BrokerStats {
     loadMessagesSent1min: number;
     bytesReceived: number;
     bytesSent: number;
+    subscriptionsCount: number;
+    retainedMessagesCount: number;
 }
 
 export interface ConnectedClient {

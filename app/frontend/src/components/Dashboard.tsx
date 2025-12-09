@@ -1,5 +1,5 @@
 import type { BrokerStats, ConnectedClient, Listener } from '../types';
-import { Activity, Users, Clock, Server, Network } from 'lucide-react';
+import { Activity, Users, Clock, Server, Network, Database, Rss } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface Props {
@@ -57,11 +57,25 @@ export default function Dashboard({ stats, clients, listeners }: Props) {
             icon: Server,
             color: 'text-purple-500',
         },
+        {
+            title: 'Subscriptions',
+            value: stats.subscriptionsCount,
+            subValue: 'Total Active Subscriptions',
+            icon: Rss,
+            color: 'text-pink-500',
+        },
+        {
+            title: 'Retained Messages',
+            value: stats.retainedMessagesCount,
+            subValue: 'Stored Messages',
+            icon: Database,
+            color: 'text-indigo-500',
+        },
     ];
 
     return (
         <div className="space-y-8">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {cards.map((card, i) => (
                     <div key={i} className="rounded-xl border bg-card text-card-foreground shadow p-6">
                         <div className="flex flex-row items-center justify-between space-y-0 pb-2">
