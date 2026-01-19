@@ -23,13 +23,25 @@ class LogService {
             }
         }
         console.log(`Streaming logs from: ${this.logFile}`);
-        this.tail = new tail_1.Tail(this.logFile, { fromBeginning: true }); // Send existing logs too? Maybe just tail.
-        this.tail.on('line', (line) => {
-            this.onLog(line);
-        });
-        this.tail.on('error', (error) => {
-            console.error('Log tail error:', error);
-        });
+        // Use useWatchFile: true (polling) for reliable file watching in Docker volumes
+        try {
+            this.tail = new tail_1.Tail(this.logFile, {
+                fromBeginning: true,
+                useWatchFile: true,
+                fsWatchOptions: { interval: 200 } // Check every 200ms
+            });
+            this.tail.on('line', (line) => {
+                console.log('Log tail line:', line);
+                this.onLog(line);
+            });
+            this.tail.on('error', (error) => {
+                console.error('Log tail error:', error);
+            });
+            console.log('Log tail started successfully');
+        }
+        catch (error) {
+            console.error('Failed to start log tail:', error);
+        }
     }
 }
 exports.LogService = LogService;

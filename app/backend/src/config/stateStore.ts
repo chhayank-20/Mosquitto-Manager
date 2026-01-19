@@ -57,11 +57,18 @@ export interface GlobalSettings {
     };
 }
 
+export interface DashboardUser {
+    username: string;
+    password_hash: string;
+    role: 'admin' | 'viewer';
+}
+
 export interface AppState {
     global_settings: GlobalSettings;
     listeners: Listener[];
     users: User[];
     acl_profiles: AclProfile[];
+    dashboard_users: DashboardUser[];
 }
 
 const defaultState: AppState = {
@@ -84,6 +91,7 @@ const defaultState: AppState = {
     ],
     users: [],
     acl_profiles: [],
+    dashboard_users: [],
 };
 
 export const loadState = (): AppState => {

@@ -53,8 +53,7 @@ Get your broker up and running in minutes.
 *   [Docker](https://www.docker.com/) installed
 *   [Docker Compose](https://docs.docker.com/compose/) installed
 
-### Installation
-
+### Installation (Docker Compose)
 1.  **Clone the repository**:
     ```bash
     git clone https://github.com/chhayank-20/mosquitto-manager.git
@@ -67,7 +66,6 @@ Get your broker up and running in minutes.
     ```
 
 3.  **Access the Dashboard**:
-    Open your browser and navigate to:
     👉 **http://localhost:3000** (HTTP)  
     👉 **https://localhost:3001** (HTTPS)
 
@@ -75,18 +73,41 @@ Get your broker up and running in minutes.
     *   **Username**: `admin`
     *   **Password**: `admin`
 
+    ![Login Screen](imgs/login.png)
+
+### Installation (Docker Run)
+If you prefer not to use Compose, you can run the container directly. **Note the volume mapping** ensuring your configuration persists.
+
+```bash
+docker run -d \
+  -p 1883:1883 \
+  -p 8883:8883 \
+  -p 3000:3000 \
+  -p 3001:3001 \
+  -v $(pwd)/mymosquitto:/mymosquitto \
+  --name mosquitto-manager \
+  mosquitto-manager
+```
+
 ### Web Interface Security
-- **Dual Access**: The interface is available via **HTTP (Port 4000)** and **HTTPS (Port 3001)**.
+- **Dual Access**: The interface is available via **HTTP (Port 3000)** and **HTTPS (Port 3001)**.
 - **Auto-TLS**: Self-signed certificates are automatically generated on first startup for immediate HTTPS support.
 - **Custom Certs**: Upload your own `server.crt` and `server.key` via the **Settings** page to replace the auto-generated ones.
 
+#### Dashboard User Management
+Manage who can access this dashboard directly from the settings.
+
+![Dashboard Users](imgs/dashboard-users.png)
+
 ### Configuration Management
-- **Persistence**: All configuration (listeners, users, ACLs) is saved to `state.json` in the persistant volume.
-- **Backup/Restore**: Export your entire configuration to a JSON file and restore it later via the **Settings** page.
+- **Apply vs Save**:
+    - **Save Draft**: Saves your changes to `state.json` (disk), but does NOT apply them to the running broker.
+    - **Apply Config**: Restarts the Mosquitto broker to apply your changes immediately.
+- **Persistence**: All configuration (listeners, users, ACLs) is saved to configuration files in your mounted volume (`/mymosquitto`).
 
 ### Default Ports
-*   **3000**: Web Management UI (http)
-*   **4000**: Web Management UI (https)
+*   **3000**: Web Management UI (HTTP)
+*   **3001**: Web Management UI (HTTPS)
 *   **1883**: Default MQTT Listener
 *   **8883**: Default MQTTS Listener (if configured)
 
@@ -111,6 +132,9 @@ Easily configure multiple listeners on different ports.
 
 ### 👥 User & Access Control (ACLs)
 *   **User Management**: Create, update, and delete MQTT users. Passwords are securely hashed.
+
+![MQTT Users](imgs/users.png)
+
 *   **Granular ACLs**: Define Access Control Profiles.
     *   *Example*: Create a "Sensors" profile that can only write to `sensors/#`.
     *   *Example*: Create a "Dashboard" profile that can only read `status/#`.
@@ -141,8 +165,8 @@ The application is configured via environment variables in `docker-compose.yml`.
 | :--- | :--- | :--- |
 | `WEB_USERNAME` | Username for the Web UI | `admin` |
 | `WEB_PASSWORD` | Password for the Web UI | `admin` |
-| `PORT` | Port for the Web UI | `3000` |
-| `MOSQUITTO_DIR` | Internal path for config | `/mymosquitto` |
+
+**Note**: `DATA_DIR` is automatically set to `/mymosquitto` inside the image. Just mount your volume there.
 
 ### Volumes
 *   `./mymosquitto`: Stores persistent data including `mosquitto.conf`, certificates, password files, and logs.

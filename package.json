@@ -1,0 +1,35 @@
+{
+  "name": "broker_dev",
+  "version": "1.0.0",
+  "description": "> **A Community Project** > *Empowering developers to manage MQTT brokers with ease and style.*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "app/frontend/src/**/*.{ts,tsx}": [
+      "bash -c 'cd app/frontend && npm exec eslint -- --fix \"$@\"' --",
+      "bash -c 'npm run build --prefix app/frontend'"
+    ],
+    "app/backend/src/**/*.ts": [
+      "bash -c 'npm run build --prefix app/backend'"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chhayank-20/Mosquitto-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chhayank-20/Mosquitto-Manager/issues"
+  },
+  "homepage": "https://github.com/chhayank-20/Mosquitto-Manager#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  }
+}

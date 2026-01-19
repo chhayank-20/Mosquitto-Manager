@@ -17,6 +17,7 @@ const generateMosquittoConf = (state) => {
     else {
         lines.push('persistence false');
     }
+    lines.push('sys_interval 2'); // Publish $SYS stats every 2 seconds
     // Logging
     lines.push(`log_dest ${state.global_settings.log_dest}`);
     lines.push('log_dest stdout'); // Always log to stdout for Docker
@@ -26,6 +27,8 @@ const generateMosquittoConf = (state) => {
     lines.push('');
     // Listeners
     state.listeners.forEach(l => {
+        if (l.enabled === false)
+            return; // Skip disabled listeners
         lines.push(`# ===========================================================`);
         lines.push(`# Listener: ${l.id}`);
         lines.push(`# ===========================================================`);
@@ -38,13 +41,16 @@ const generateMosquittoConf = (state) => {
             lines.push('protocol mqtt');
         }
         // TLS
+        // TLS
         if (l.protocol === 'mqtts' || l.protocol === 'wss') {
-            if (l.cafile)
-                lines.push(`cafile ${l.cafile}`);
-            if (l.certfile)
-                lines.push(`certfile ${l.certfile}`);
-            if (l.keyfile)
-                lines.push(`keyfile ${l.keyfile}`);
+            if (state.global_settings.certificates) {
+                if (state.global_settings.certificates.cafile)
+                    lines.push(`cafile ${state.global_settings.certificates.cafile}`);
+                if (state.global_settings.certificates.certfile)
+                    lines.push(`certfile ${state.global_settings.certificates.certfile}`);
+                if (state.global_settings.certificates.keyfile)
+                    lines.push(`keyfile ${state.global_settings.certificates.keyfile}`);
+            }
             if (l.tls_version)
                 lines.push(`tls_version ${l.tls_version}`);
         }
@@ -58,12 +64,13 @@ const generateMosquittoConf = (state) => {
         // If allow_anonymous is false, we generally need a password file unless using certs
         if (!l.allow_anonymous || l.password_file) {
             // Default to standard location if not specified but auth is on
-            const pwdFile = l.password_file || '/mymosquitto/passwordfile';
+            // Use secure internal location to avoid permission issues with mounted volumes
+            const pwdFile = l.password_file ? l.password_file : '/etc/mosquitto/secure/passwordfile';
             lines.push(`password_file ${pwdFile}`);
         }
         // ACL
         if (l.acl_profile) {
-            lines.push(`acl_file /mymosquitto/acls/${l.acl_profile}.conf`);
+            lines.push(`acl_file /etc/mosquitto/secure/acls/${l.acl_profile}.conf`);
         }
         lines.push('');
     });
@@ -72,7 +79,8 @@ const generateMosquittoConf = (state) => {
     lines.push('# Internal Listener (Backend)');
     lines.push('# ===========================================================');
     lines.push('listener 10883 127.0.0.1');
-    lines.push('allow_anonymous true');
+    lines.push('allow_anonymous false');
+    lines.push('password_file /etc/mosquitto/secure/passwordfile');
     lines.push('');
     return lines.join('\n') + '\n';
 };
@@ -89,7 +97,7 @@ const generateAclFiles = (state) => {
     const files = {};
     for (const profile of state.acl_profiles) {
         const lines = [];
-        lines.push(`# ACL Profile: ${profile.name}`);
+        lines.push(`# Access Profile: ${profile.name}`);
         if (profile.description)
             lines.push(`# ${profile.description}`);
         lines.push('');
@@ -98,9 +106,6 @@ const generateAclFiles = (state) => {
             for (const rule of userEntry.rules) {
                 if (rule.type === 'topic') {
                     lines.push(`topic ${rule.access} ${rule.value}`);
-                }
-                else if (rule.type === 'pattern') {
-                    lines.push(`pattern ${rule.access} ${rule.value}`);
                 }
             }
             lines.push('');

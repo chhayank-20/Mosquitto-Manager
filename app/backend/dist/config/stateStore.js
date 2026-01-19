@@ -28,6 +28,7 @@ const defaultState = {
     ],
     users: [],
     acl_profiles: [],
+    dashboard_users: [],
 };
 const loadState = () => {
     try {

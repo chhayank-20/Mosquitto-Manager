@@ -78,3 +78,15 @@ export interface ConnectedClient {
     username?: string;
     connectedAt: string; // Date string over wire
 }
+
+export interface CurrentUser {
+    username: string;
+    role: 'admin' | 'viewer';
+}
+
+export interface DashboardUser {
+    username: string;
+    role: 'admin' | 'viewer';
+    is_default?: boolean;
+    password?: string; // Optional for updates
+}

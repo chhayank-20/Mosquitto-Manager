@@ -44,9 +44,10 @@ const DownloadButton = ({ path }: { path: string }) => (
 interface Props {
     state: AppState;
     setState: (state: AppState) => void;
+    readOnly: boolean;
 }
 
-export default function Listeners({ state, setState }: Props) {
+export default function Listeners({ state, setState, readOnly }: Props) {
     const [expandedListeners, setExpandedListeners] = useState<Record<number, boolean>>({});
     const listenersEndRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +62,7 @@ export default function Listeners({ state, setState }: Props) {
         }
     }, [state.listeners.length]);
 
-    const updateSettings = (key: keyof AppState['global_settings'], value: any) => {
+    const updateSettings = (key: keyof AppState['global_settings'], value: string | boolean | string[] | { cafile: string; certfile: string; keyfile: string; }) => {
         setState({
             ...state,
             global_settings: { ...state.global_settings, [key]: value }
@@ -110,7 +111,7 @@ export default function Listeners({ state, setState }: Props) {
         }
     };
 
-    const updateListener = (index: number, field: keyof Listener, value: any) => {
+    const updateListener = (index: number, field: keyof Listener, value: string | number | boolean) => {
         const newListeners = [...state.listeners];
         newListeners[index] = { ...newListeners[index], [field]: value };
         setState({ ...state, listeners: newListeners });
@@ -142,8 +143,9 @@ export default function Listeners({ state, setState }: Props) {
                                 <input
                                     type="checkbox"
                                     checked={state.global_settings.persistence}
+                                    disabled={readOnly}
                                     onChange={(e) => updateSettings('persistence', e.target.checked)}
-                                    className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                    className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary disabled:opacity-50"
                                 />
                                 <span className="text-sm">Enable Persistence</span>
                             </div>
@@ -157,6 +159,7 @@ export default function Listeners({ state, setState }: Props) {
                             <input
                                 type="text"
                                 value={state.global_settings.log_dest}
+                                disabled={readOnly}
                                 onChange={(e) => updateSettings('log_dest', e.target.value)}
                                 className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 placeholder="file /mosquitto/log/mosquitto.log"
@@ -180,11 +183,12 @@ export default function Listeners({ state, setState }: Props) {
                                     <input
                                         type="text"
                                         value={state.global_settings.certificates?.cafile || ''}
+                                        disabled={readOnly}
                                         onChange={(e) => updateGlobalCerts('cafile', e.target.value)}
                                         className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="/path/to/ca.crt"
                                     />
-                                    <UploadButton onUpload={(path) => updateGlobalCerts('cafile', path)} />
+                                    {!readOnly && <UploadButton onUpload={(path) => updateGlobalCerts('cafile', path)} />}
                                     {state.global_settings.certificates?.cafile && <DownloadButton path={state.global_settings.certificates.cafile} />}
                                 </div>
                             </div>
@@ -197,11 +201,12 @@ export default function Listeners({ state, setState }: Props) {
                                     <input
                                         type="text"
                                         value={state.global_settings.certificates?.certfile || ''}
+                                        disabled={readOnly}
                                         onChange={(e) => updateGlobalCerts('certfile', e.target.value)}
                                         className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="/path/to/server.crt"
                                     />
-                                    <UploadButton onUpload={(path) => updateGlobalCerts('certfile', path)} />
+                                    {!readOnly && <UploadButton onUpload={(path) => updateGlobalCerts('certfile', path)} />}
                                     {state.global_settings.certificates?.certfile && <DownloadButton path={state.global_settings.certificates.certfile} />}
                                 </div>
                             </div>
@@ -214,11 +219,12 @@ export default function Listeners({ state, setState }: Props) {
                                     <input
                                         type="text"
                                         value={state.global_settings.certificates?.keyfile || ''}
+                                        disabled={readOnly}
                                         onChange={(e) => updateGlobalCerts('keyfile', e.target.value)}
                                         className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="/path/to/server.key"
                                     />
-                                    <UploadButton onUpload={(path) => updateGlobalCerts('keyfile', path)} />
+                                    {!readOnly && <UploadButton onUpload={(path) => updateGlobalCerts('keyfile', path)} />}
                                     {state.global_settings.certificates?.keyfile && <DownloadButton path={state.global_settings.certificates.keyfile} />}
                                 </div>
                             </div>
@@ -231,30 +237,33 @@ export default function Listeners({ state, setState }: Props) {
                 <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2">
                     <Shield className="h-5 w-5" /> Listeners
                 </h2>
-                <button
-                    onClick={addListener}
-                    className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-                >
-                    <Plus className="mr-2 h-4 w-4" /> Add Listener
-                </button>
+                {!readOnly && (
+                    <button
+                        onClick={addListener}
+                        className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                    >
+                        <Plus className="mr-2 h-4 w-4" /> Add Listener
+                    </button>
+                )}
             </div>
 
             <div className="grid gap-6">
                 {state.listeners.map((listener, idx) => (
-                    <div key={idx} className={cn("rounded-xl border bg-card text-card-foreground shadow transition-all", !listener.enabled && "opacity-60 grayscale-[0.5]")}>
+                    <div key={idx} className={cn("rounded-xl border bg-card text-card-foreground shadow transition-all", listener.enabled === false && "opacity-60 grayscale-[0.5]")}>
                         <div className="bg-muted/50 p-4 flex justify-between items-center border-b rounded-t-xl">
                             <div className="flex items-center gap-4">
                                 <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
                                     {listener.protocol.toUpperCase()}
                                 </div>
                                 <span className="font-mono text-sm font-medium">Port {listener.port}</span>
-                                {!listener.enabled && <span className="text-xs bg-destructive/10 text-destructive px-2 py-0.5 rounded font-medium">Disabled</span>}
+                                {listener.enabled === false && <span className="text-xs bg-destructive/10 text-destructive px-2 py-0.5 rounded font-medium">Disabled</span>}
                             </div>
                             <div className="flex items-center gap-2">
                                 <button
-                                    onClick={() => updateListener(idx, 'enabled', !listener.enabled)}
-                                    className={cn("p-2 rounded-md transition-colors", listener.enabled ? "text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30" : "text-muted-foreground hover:bg-muted")}
-                                    title={listener.enabled ? "Disable Listener" : "Enable Listener"}
+                                    onClick={() => updateListener(idx, 'enabled', !(listener.enabled !== false))}
+                                    disabled={readOnly}
+                                    className={cn("p-2 rounded-md transition-colors", listener.enabled !== false ? "text-green-600 hover:bg-green-100 dark:hover:bg-green-900/30" : "text-muted-foreground hover:bg-muted", readOnly && "opacity-50 cursor-not-allowed")}
+                                    title={listener.enabled !== false ? "Disable Listener" : "Enable Listener"}
                                 >
                                     <Power className="h-4 w-4" />
                                 </button>
@@ -265,13 +274,15 @@ export default function Listeners({ state, setState }: Props) {
                                 >
                                     {expandedListeners[idx] ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                                 </button>
-                                <button
-                                    onClick={() => removeListener(idx)}
-                                    className="p-2 text-destructive hover:text-destructive/80 transition-colors"
-                                    title="Delete Listener"
-                                >
-                                    <Trash2 className="h-4 w-4" />
-                                </button>
+                                {!readOnly && (
+                                    <button
+                                        onClick={() => removeListener(idx)}
+                                        className="p-2 text-destructive hover:text-destructive/80 transition-colors"
+                                        title="Delete Listener"
+                                    >
+                                        <Trash2 className="h-4 w-4" />
+                                    </button>
+                                )}
                             </div>
                         </div>
 
@@ -287,13 +298,12 @@ export default function Listeners({ state, setState }: Props) {
                                             </label>
                                             <select
                                                 value={listener.protocol}
+                                                disabled={readOnly}
                                                 onChange={(e) => updateListener(idx, 'protocol', e.target.value)}
                                                 className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                             >
                                                 <option value="mqtt">MQTT</option>
                                                 <option value="mqtts">MQTTS (TLS)</option>
-                                                {/* <option value="ws">WebSockets</option>
-                                                <option value="wss">WebSockets Secure (TLS)</option> */}
                                             </select>
                                         </div>
                                         <div className="space-y-2">
@@ -304,6 +314,7 @@ export default function Listeners({ state, setState }: Props) {
                                             <input
                                                 type="number"
                                                 value={listener.port}
+                                                disabled={readOnly}
                                                 onChange={(e) => updateListener(idx, 'port', parseInt(e.target.value))}
                                                 className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                             />
@@ -316,6 +327,7 @@ export default function Listeners({ state, setState }: Props) {
                                             <input
                                                 type="text"
                                                 value={listener.mount_point}
+                                                disabled={readOnly}
                                                 onChange={(e) => updateListener(idx, 'mount_point', e.target.value)}
                                                 className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                                 placeholder="Optional"
@@ -327,21 +339,6 @@ export default function Listeners({ state, setState }: Props) {
                                 <div className="space-y-4">
                                     <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Security & Access</h4>
                                     <div className="grid gap-4">
-                                        {/* <div className="space-y-2">
-                                            <label className="text-sm font-medium flex items-center">
-                                                Authentication
-                                                <InfoTooltip content="Method to authenticate clients" />
-                                            </label>
-                                            <select
-                                                value={listener.auth_option}
-                                                onChange={(e) => updateListener(idx, 'auth_option', e.target.value)}
-                                                className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                            >
-                                                <option value="none">None</option>
-                                                <option value="password_file">Password File</option>
-                                                <option value="acl_file">ACL File</option>
-                                            </select>
-                                        </div> */}
 
                                         {(listener.protocol === 'mqtts' || listener.protocol === 'wss') ? (
                                             <div className="space-y-4">
@@ -355,6 +352,7 @@ export default function Listeners({ state, setState }: Props) {
                                                     </label>
                                                     <select
                                                         value={listener.tls_version || ''}
+                                                        disabled={readOnly}
                                                         onChange={(e) => updateListener(idx, 'tls_version', e.target.value)}
                                                         className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                                     >
@@ -368,8 +366,9 @@ export default function Listeners({ state, setState }: Props) {
                                                     <input
                                                         type="checkbox"
                                                         checked={listener.allow_anonymous}
+                                                        disabled={readOnly}
                                                         onChange={(e) => updateListener(idx, 'allow_anonymous', e.target.checked)}
-                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary disabled:opacity-50"
                                                     />
                                                     <label className="text-sm font-medium flex items-center gap-2">
                                                         Allow Anonymous
@@ -380,8 +379,9 @@ export default function Listeners({ state, setState }: Props) {
                                                     <input
                                                         type="checkbox"
                                                         checked={listener.require_certificate}
+                                                        disabled={readOnly}
                                                         onChange={(e) => updateListener(idx, 'require_certificate', e.target.checked)}
-                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary disabled:opacity-50"
                                                     />
                                                     <label className="text-sm font-medium flex items-center gap-2">
                                                         Require Client Certificates
@@ -392,8 +392,9 @@ export default function Listeners({ state, setState }: Props) {
                                                     <input
                                                         type="checkbox"
                                                         checked={listener.use_identity_as_username}
+                                                        disabled={readOnly}
                                                         onChange={(e) => updateListener(idx, 'use_identity_as_username', e.target.checked)}
-                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary disabled:opacity-50"
                                                     />
                                                     <label className="text-sm font-medium flex items-center gap-2">
                                                         Use Identity as Username
@@ -407,8 +408,9 @@ export default function Listeners({ state, setState }: Props) {
                                                     <input
                                                         type="checkbox"
                                                         checked={listener.allow_anonymous}
+                                                        disabled={readOnly}
                                                         onChange={(e) => updateListener(idx, 'allow_anonymous', e.target.checked)}
-                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                                        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary disabled:opacity-50"
                                                     />
                                                     <label className="text-sm font-medium flex items-center">
                                                         Allow Anonymous
@@ -425,6 +427,7 @@ export default function Listeners({ state, setState }: Props) {
                                             </label>
                                             <select
                                                 value={listener.acl_profile}
+                                                disabled={readOnly}
                                                 onChange={(e) => updateListener(idx, 'acl_profile', e.target.value)}
                                                 className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                             >

@@ -27,7 +27,7 @@ FROM node:22-alpine
 RUN apk add --no-cache mosquitto mosquitto-clients openssl \
     && mkdir -p /mymosquitto /app/data /run
 
-ENV DATA_DIR=/app/data
+ENV DATA_DIR=/mymosquitto
 
 WORKDIR /app
 

@@ -17,8 +17,6 @@ class ClientTracker {
         // Ensure file exists
         if (!fs_1.default.existsSync(this.logFile)) {
             console.warn(`Log file ${this.logFile} does not exist yet. Waiting...`);
-            // In a real app, we'd watch for file creation. 
-            // For now, let's just try to create it or fail gracefully.
             try {
                 fs_1.default.writeFileSync(this.logFile, '');
             }
@@ -28,7 +26,18 @@ class ClientTracker {
             }
         }
         console.log(`Tracking clients via log: ${this.logFile}`);
-        this.tail = new tail_1.Tail(this.logFile);
+        console.log(`Tracking clients via log: ${this.logFile}`);
+        // We do NOT read the existing file content on startup anymore.
+        // This prevents stale clients (who didn't disconnect gracefully due to container kill)
+        // from showing up as connected.
+        // We start fresh and only track new events.
+        this.emitUpdate(); // Emit empty state initially
+        // 2. Start tailing for new events
+        // Use useWatchFile: true (polling) for reliable file watching in Docker volumes
+        this.tail = new tail_1.Tail(this.logFile, {
+            useWatchFile: true,
+            fsWatchOptions: { interval: 200 } // Check every 200ms
+        });
         this.tail.on('line', (line) => {
             this.parseLine(line);
         });
@@ -41,10 +50,8 @@ class ClientTracker {
         // 163...: New client connected from 172.18.0.1:56842 as mqtt-explorer-8348 (p2, c1, k60, u'admin').
         // 163...: Client mqtt-explorer-8348 disconnected.
         try {
+            console.log(`[ClientTracker] Analyzing line: ${line}`);
             if (line.includes('New client connected')) {
-                // Regex to extract info
-                // ... as client_id (p2, c1, k60, u'username').
-                // ... as client_id (p2, c1, k60).  <-- anonymous
                 const clientMatch = line.match(/as ([^ ]+) \(/);
                 const ipMatch = line.match(/from ([^:]+)/);
                 const userMatch = line.match(/u'([^']+)'/);
@@ -52,6 +59,7 @@ class ClientTracker {
                     const clientId = clientMatch[1];
                     const ip = ipMatch[1];
                     const username = userMatch ? userMatch[1] : undefined;
+                    console.log(`[ClientTracker] Adding client: ${clientId} (${ip}, ${username})`);
                     this.clients.set(clientId, {
                         id: clientId,
                         ip,
@@ -60,14 +68,25 @@ class ClientTracker {
                     });
                     this.emitUpdate();
                 }
+                else {
+                    console.log('[ClientTracker] Failed to match new connection format');
+                }
             }
-            else if (line.includes('disconnected')) {
-                // Client client_id disconnected.
-                const match = line.match(/Client ([^ ]+) disconnected/);
+            else if (line.includes('disconnected') || line.includes('closed its connection') || line.includes('has exceeded timeout')) {
+                const match = line.match(/Client ([^ ]+) (disconnected|closed its connection|has exceeded timeout)/);
                 if (match) {
                     const clientId = match[1];
-                    this.clients.delete(clientId);
-                    this.emitUpdate();
+                    console.log(`[ClientTracker] Removing client: ${clientId}`);
+                    if (this.clients.has(clientId)) {
+                        this.clients.delete(clientId);
+                        this.emitUpdate();
+                    }
+                    else {
+                        console.log(`[ClientTracker] Client ${clientId} not found in map to remove. Current keys: ${Array.from(this.clients.keys()).join(', ')}`);
+                    }
+                }
+                else {
+                    console.log('[ClientTracker] Failed to match disconnect format');
                 }
             }
         }

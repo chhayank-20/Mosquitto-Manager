@@ -1,15 +1,24 @@
+import { useState } from 'react';
 import type { AppState, AclProfile, AclRule } from '../types';
 import { Shield, Plus, Trash2, FileText, ChevronDown } from 'lucide-react';
 import { InfoTooltip } from './InfoTooltip';
 
-
 interface Props {
     state: AppState;
     setState: (state: AppState) => void;
+    onSave: () => Promise<void>;
+    readOnly: boolean;
 }
 
-export default function Acls({ state, setState }: Props) {
+export default function Acls({ state, setState, onSave, readOnly }: Props) {
+    const [editingProfile, setEditingProfile] = useState<number | null>(null);
+
     const addProfile = () => {
+        if (state.users.length === 0) {
+            alert("No users found! Please create a user in the 'Users' tab first.");
+            return;
+        }
+
         const newProfile: AclProfile = {
             name: `profile_${state.acl_profiles.length + 1}`,
             description: 'New Access Profile',
@@ -29,7 +38,7 @@ export default function Acls({ state, setState }: Props) {
         }
     };
 
-    const updateProfile = (index: number, field: keyof AclProfile, value: any) => {
+    const updateProfile = (index: number, field: keyof AclProfile, value: string) => {
         const newProfiles = [...state.acl_profiles];
         newProfiles[index] = { ...newProfiles[index], [field]: value };
         setState({ ...state, acl_profiles: newProfiles });
@@ -52,14 +61,14 @@ export default function Acls({ state, setState }: Props) {
         }
     };
 
-    const updateUserInProfile = (profileIndex: number, userIndex: number, field: string, value: any) => {
+    const updateUserInProfile = (profileIndex: number, userIndex: number, field: string, value: string) => {
         const newProfiles = [...state.acl_profiles];
-        // @ts-ignore
+        // @ts-expect-error Dynamic field access on nested object
         newProfiles[profileIndex].users[userIndex][field] = value;
         setState({ ...state, acl_profiles: newProfiles });
     };
 
-    const updateRule = (profileIndex: number, userIndex: number, ruleIndex: number, field: keyof AclRule, value: any) => {
+    const updateRule = (profileIndex: number, userIndex: number, ruleIndex: number, field: keyof AclRule, value: string) => {
         const newProfiles = [...state.acl_profiles];
         newProfiles[profileIndex].users[userIndex].rules[ruleIndex] = {
             ...newProfiles[profileIndex].users[userIndex].rules[ruleIndex],
@@ -76,18 +85,25 @@ export default function Acls({ state, setState }: Props) {
         }
     };
 
+    const handleSaveProfile = async () => {
+        await onSave();
+        setEditingProfile(null);
+    };
+
     return (
         <div className="space-y-8">
             <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2">
                     <Shield className="h-5 w-5" /> Access Profiles
                 </h2>
-                <button
-                    onClick={addProfile}
-                    className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-                >
-                    <Plus className="mr-2 h-4 w-4" /> Create Profile
-                </button>
+                {!readOnly && (
+                    <button
+                        onClick={addProfile}
+                        className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                    >
+                        <Plus className="mr-2 h-4 w-4" /> Create Profile
+                    </button>
+                )}
             </div>
 
             <div className="grid gap-6">
@@ -101,8 +117,9 @@ export default function Acls({ state, setState }: Props) {
                                         <input
                                             type="text"
                                             value={profile.name}
+                                            disabled={readOnly || editingProfile !== pIdx}
                                             onChange={(e) => updateProfile(pIdx, 'name', e.target.value)}
-                                            className="font-medium bg-transparent border-none p-0 focus:ring-0 h-auto text-base"
+                                            className="font-medium bg-transparent border-none p-0 focus:ring-0 h-auto text-base disabled:text-foreground"
                                             placeholder="Profile Name"
                                         />
                                         <InfoTooltip content="Name of the access profile" />
@@ -110,18 +127,40 @@ export default function Acls({ state, setState }: Props) {
                                     <input
                                         type="text"
                                         value={profile.description}
+                                        disabled={readOnly || editingProfile !== pIdx}
                                         onChange={(e) => updateProfile(pIdx, 'description', e.target.value)}
-                                        className="text-sm text-muted-foreground bg-transparent border-none p-0 focus:ring-0 h-auto"
+                                        className="text-sm text-muted-foreground bg-transparent border-none p-0 focus:ring-0 h-auto "
                                         placeholder="Description"
                                     />
                                 </div>
                             </div>
-                            <button
-                                onClick={() => removeProfile(pIdx)}
-                                className="text-destructive hover:text-destructive/80 transition-colors"
-                            >
-                                <Trash2 className="h-4 w-4" />
-                            </button>
+                            <div className="flex items-center gap-2">
+                                {!readOnly && (
+                                    <>
+                                        {editingProfile === pIdx ? (
+                                            <button
+                                                onClick={handleSaveProfile}
+                                                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-8 px-3"
+                                            >
+                                                Save
+                                            </button>
+                                        ) : (
+                                            <button
+                                                onClick={() => setEditingProfile(pIdx)}
+                                                className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-8 px-3"
+                                            >
+                                                Edit
+                                            </button>
+                                        )}
+                                        <button
+                                            onClick={() => removeProfile(pIdx)}
+                                            className="text-destructive hover:text-destructive/80 transition-colors p-2"
+                                        >
+                                            <Trash2 className="h-4 w-4" />
+                                        </button>
+                                    </>
+                                )}
+                            </div>
                         </div>
 
                         <div className="p-6 space-y-6">
@@ -133,6 +172,7 @@ export default function Acls({ state, setState }: Props) {
                                             <div className="relative">
                                                 <select
                                                     value={user.username}
+                                                    disabled={readOnly || editingProfile !== pIdx}
                                                     onChange={(e) => updateUserInProfile(pIdx, uIdx, 'username', e.target.value)}
                                                     className="flex h-8 w-48 appearance-none rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 pr-8"
                                                 >
@@ -147,12 +187,15 @@ export default function Acls({ state, setState }: Props) {
                                                 <ChevronDown className="absolute right-2 top-2.5 h-3 w-3 opacity-50 pointer-events-none" />
                                             </div>
                                         </div>
-                                        <button
-                                            onClick={() => removeUserFromProfile(pIdx, uIdx)}
-                                            className="text-xs text-destructive hover:underline"
-                                        >
-                                            Remove User
-                                        </button>
+                                        {/* Only show Remove User button in edit mode and not readOnly */}
+                                        {editingProfile === pIdx && !readOnly && (
+                                            <button
+                                                onClick={() => removeUserFromProfile(pIdx, uIdx)}
+                                                className="text-xs text-destructive hover:underline"
+                                            >
+                                                Remove User
+                                            </button>
+                                        )}
                                     </div>
 
                                     <div className="space-y-2 pl-4 border-l-2 border-muted">
@@ -164,8 +207,9 @@ export default function Acls({ state, setState }: Props) {
                                                 <div className="relative">
                                                     <select
                                                         value={rule.access}
+                                                        disabled={readOnly || editingProfile !== pIdx}
                                                         onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'access', e.target.value)}
-                                                        className="h-8 appearance-none rounded-md border border-input bg-background px-2 pr-6 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                                                        className="h-8 appearance-none rounded-md border border-input bg-background px-2 pr-6 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50"
                                                     >
                                                         <option value="read">Read</option>
                                                         <option value="write">Write</option>
@@ -176,38 +220,46 @@ export default function Acls({ state, setState }: Props) {
                                                 <input
                                                     type="text"
                                                     value={rule.value}
+                                                    disabled={readOnly || editingProfile !== pIdx}
                                                     onChange={(e) => updateRule(pIdx, uIdx, rIdx, 'value', e.target.value)}
-                                                    className="flex-1 h-8 rounded-md border border-input bg-transparent px-3 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                                                    className="flex-1 h-8 rounded-md border border-input bg-transparent px-3 text-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:border-transparent disabled:shadow-none disabled:px-0"
                                                 />
-                                                <button
-                                                    onClick={() => removeRule(pIdx, uIdx, rIdx)}
-                                                    className="text-muted-foreground hover:text-destructive opacity-0 group-hover:opacity-100 transition-opacity p-1"
-                                                    title="Delete Rule"
-                                                >
-                                                    <Trash2 className="h-3.5 w-3.5" />
-                                                </button>
+                                                {editingProfile === pIdx && !readOnly && (
+                                                    <button
+                                                        onClick={() => removeRule(pIdx, uIdx, rIdx)}
+                                                        className="text-muted-foreground hover:text-destructive opacity-100 transition-opacity p-1"
+                                                        title="Delete Rule"
+                                                    >
+                                                        <Trash2 className="h-3.5 w-3.5" />
+                                                    </button>
+                                                )}
                                             </div>
                                         ))}
-                                        <button
-                                            onClick={() => {
-                                                const newProfiles = [...state.acl_profiles];
-                                                newProfiles[pIdx].users[uIdx].rules.push({ type: 'topic', access: 'read', value: '' });
-                                                setState({ ...state, acl_profiles: newProfiles });
-                                            }}
-                                            className="text-xs text-primary hover:underline flex items-center gap-1"
-                                        >
-                                            <Plus className="h-3 w-3" /> Add Rule
-                                        </button>
+                                        {editingProfile === pIdx && !readOnly && (
+                                            <button
+                                                onClick={() => {
+                                                    const newProfiles = [...state.acl_profiles];
+                                                    newProfiles[pIdx].users[uIdx].rules.push({ type: 'topic', access: 'read', value: '' });
+                                                    setState({ ...state, acl_profiles: newProfiles });
+                                                }}
+                                                className="text-xs text-primary hover:underline flex items-center gap-1"
+                                            >
+                                                <Plus className="h-3 w-3" /> Add Rule
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             ))}
 
-                            <button
-                                onClick={() => addUserToProfile(pIdx)}
-                                className="w-full py-2 border-2 border-dashed rounded-lg text-sm text-muted-foreground hover:bg-muted/50 transition-colors flex items-center justify-center gap-2"
-                            >
-                                <Plus className="h-4 w-4" /> Add User Block
-                            </button>
+                            {/* Only show "Add User Block" in edit mode and not readOnly */}
+                            {editingProfile === pIdx && !readOnly && (
+                                <button
+                                    onClick={() => addUserToProfile(pIdx)}
+                                    className="w-full py-2 border-2 border-dashed rounded-lg text-sm text-muted-foreground hover:bg-muted/50 transition-colors flex items-center justify-center gap-2"
+                                >
+                                    <Plus className="h-4 w-4" /> Add User Block
+                                </button>
+                            )}
                         </div>
                     </div>
                 ))}

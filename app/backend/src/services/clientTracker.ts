@@ -33,16 +33,13 @@ export class ClientTracker {
 
         console.log(`Tracking clients via log: ${this.logFile}`);
 
-        // 1. Read existing file content to restore state
-        try {
-            const content = fs.readFileSync(this.logFile, 'utf-8');
-            const lines = content.split('\n');
-            console.log(`Restoring client state from ${lines.length} log lines...`);
-            lines.forEach(line => this.parseLine(line));
-            this.emitUpdate(); // Emit initial state
-        } catch (error) {
-            console.error('Error reading existing log file:', error);
-        }
+        console.log(`Tracking clients via log: ${this.logFile}`);
+
+        // We do NOT read the existing file content on startup anymore.
+        // This prevents stale clients (who didn't disconnect gracefully due to container kill)
+        // from showing up as connected.
+        // We start fresh and only track new events.
+        this.emitUpdate(); // Emit empty state initially
 
         // 2. Start tailing for new events
         // Use useWatchFile: true (polling) for reliable file watching in Docker volumes
@@ -66,11 +63,9 @@ export class ClientTracker {
         // 163...: Client mqtt-explorer-8348 disconnected.
 
         try {
-            if (line.includes('New client connected')) {
-                // Regex to extract info
-                // ... as client_id (p2, c1, k60, u'username').
-                // ... as client_id (p2, c1, k60).  <-- anonymous
+            console.log(`[ClientTracker] Analyzing line: ${line}`);
 
+            if (line.includes('New client connected')) {
                 const clientMatch = line.match(/as ([^ ]+) \(/);
                 const ipMatch = line.match(/from ([^:]+)/);
                 const userMatch = line.match(/u'([^']+)'/);
@@ -80,6 +75,7 @@ export class ClientTracker {
                     const ip = ipMatch[1];
                     const username = userMatch ? userMatch[1] : undefined;
 
+                    console.log(`[ClientTracker] Adding client: ${clientId} (${ip}, ${username})`);
                     this.clients.set(clientId, {
                         id: clientId,
                         ip,
@@ -87,30 +83,23 @@ export class ClientTracker {
                         connectedAt: new Date()
                     });
                     this.emitUpdate();
+                } else {
+                    console.log('[ClientTracker] Failed to match new connection format');
                 }
             } else if (line.includes('disconnected') || line.includes('closed its connection') || line.includes('has exceeded timeout')) {
-                // Client client_id disconnected.
-                // Client client_id closed its connection.
-                // Client client_id has exceeded timeout
                 const match = line.match(/Client ([^ ]+) (disconnected|closed its connection|has exceeded timeout)/);
                 if (match) {
                     const clientId = match[1];
-                    this.clients.delete(clientId);
-                    this.emitUpdate();
+                    console.log(`[ClientTracker] Removing client: ${clientId}`);
+                    if (this.clients.has(clientId)) {
+                        this.clients.delete(clientId);
+                        this.emitUpdate();
+                    } else {
+                        console.log(`[ClientTracker] Client ${clientId} not found in map to remove. Current keys: ${Array.from(this.clients.keys()).join(', ')}`);
+                    }
+                } else {
+                    console.log('[ClientTracker] Failed to match disconnect format');
                 }
-            } else if (line.includes('already connected, closing old connection')) {
-                // Client client_id already connected, closing old connection.
-                // This means the OLD connection is closed, but a NEW "New client connected" line usually follows or precedes.
-                // If we delete it here, we might delete the NEW connection if the logs are out of order or if the map key is same.
-                // Actually, "New client connected" overwrites the Map entry.
-                // So "closing old connection" doesn't need to delete, because the new one is authoritative.
-                // BUT if the new one happened *before* this line in processing?
-                // Usually "New client connected" comes *before* or *after*?
-                // Log:
-                // New client ... as mqttx...
-                // Client mqttx... already connected, closing old connection.
-                // If "New" comes first, we add it. Then "closing old" comes. If we delete, we lose the new one.
-                // So we should IGNORE "closing old connection" because the "New client" event is the source of truth for the *active* session.
             }
         } catch (e) {
             console.error('Error parsing log line:', line, e);

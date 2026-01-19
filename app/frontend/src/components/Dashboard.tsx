@@ -94,7 +94,7 @@ export default function Dashboard({ stats, clients, listeners }: Props) {
                         <Network className="h-4 w-4 text-primary" />
                     </div>
                     <div className="space-y-2 mt-2">
-                        {listeners.map((l, i) => (
+                        {listeners.filter(l => l.enabled !== false).map((l, i) => (
                             <div key={i} className="flex items-center justify-between text-sm">
                                 <span className="font-medium">{l.protocol.toUpperCase()}</span>
                                 <span className="bg-muted px-2 py-0.5 rounded text-xs font-mono">{l.port}</span>
